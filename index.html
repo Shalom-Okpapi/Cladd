@@ -4,23 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cladd — Built to Protect</title>
-  <meta name="description" content="Your power bank has zero protection. Cladd is changing that. Join the waitlist for the world's first snap-fit power bank pouch.">
+  <meta name="description" content="You don't carry things. You carry who you are. Cladd is a marketplace where independent artists design what you carry — starting with the world's first snap-fit power bank pouch.">
 
   <!-- Poppins — brand font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
 
-  <!-- Supabase JS -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSLB5BF9QH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JSLB5BF9QH');
-</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JSLB5BF9QH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JSLB5BF9QH');
+  </script>
 
   <style>
 
@@ -151,7 +147,6 @@
       animation: rise 0.9s 0.2s ease forwards;
     }
 
-    /* Italic second line — the emotional contrast */
     .hero-headline .soft {
       font-weight: 600;
       font-style: italic;
@@ -172,7 +167,7 @@
       font-size: 0.95rem;
       font-weight: 300;
       color: var(--muted);
-      max-width: 420px;
+      max-width: 440px;
       line-height: 1.9;
       margin-bottom: 48px;
       opacity: 0;
@@ -185,7 +180,7 @@
     }
 
 
-    /* ── Waitlist Form ────────────────────────────────────── */
+    /* ── Waitlist Form (Tally) ───────────────────────────── */
     .waitlist-wrap {
       width: 100%;
       max-width: 420px;
@@ -199,75 +194,6 @@
       gap: 10px;
     }
 
-    .input-row {
-      display: flex;
-      border: 1.5px solid var(--border);
-      border-radius: 6px;
-      overflow: hidden;
-      transition: border-color 0.2s ease;
-    }
-
-    .input-row:focus-within {
-      border-color: var(--black);
-    }
-
-    .input-row.error {
-      border-color: #e11d48;
-    }
-
-    .waitlist-form input {
-      flex: 1;
-      padding: 15px 18px;
-      background: transparent;
-      color: var(--ink);
-      font-family: var(--font);
-      font-size: 0.85rem;
-      font-weight: 400;
-    }
-
-    .waitlist-form input::placeholder { color: #ccc; }
-
-    .waitlist-form button {
-      padding: 15px 22px;
-      background: var(--black);
-      color: white;
-      font-family: var(--font);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background 0.2s ease;
-      border-left: 1.5px solid var(--border);
-      min-width: 130px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .waitlist-form button:hover { background: var(--gold); }
-
-    .waitlist-form button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    /* Spinner inside button */
-    .spinner {
-      width: 14px; height: 14px;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-top-color: white;
-      border-radius: 50%;
-      animation: spin 0.7s linear infinite;
-      display: none;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
     .form-note {
       font-size: 0.7rem;
       font-weight: 400;
@@ -276,15 +202,6 @@
       letter-spacing: 0.2px;
     }
 
-    /* Error message under form */
-    .form-error {
-      font-size: 0.75rem;
-      color: #e11d48;
-      text-align: center;
-      display: none;
-    }
-
-    /* Success state */
     .success-msg {
       display: none;
       flex-direction: column;
@@ -294,7 +211,6 @@
       border: 1.5px solid var(--border);
       border-radius: 6px;
       text-align: center;
-      animation: rise 0.5s ease forwards;
     }
 
     .success-icon {
@@ -367,8 +283,8 @@
     }
 
 
-    /* ── Problem Section ─────────────────────────────────── */
-    .problem-section {
+    /* ── Product Reveal Section ──────────────────────────── */
+    .product-section {
       padding: 100px 48px;
       border-top: 1px solid var(--border);
       max-width: 860px;
@@ -386,7 +302,7 @@
       display: block;
     }
 
-    .problem-section h2 {
+    .product-section h2 {
       font-size: clamp(1.8rem, 4vw, 3rem);
       font-weight: 800;
       line-height: 1.15;
@@ -395,28 +311,66 @@
       margin-bottom: 28px;
     }
 
-    .problem-section h2 .soft {
+    .product-section h2 .soft {
       font-weight: 300;
       font-style: italic;
       color: var(--muted);
     }
 
-    .problem-section p {
+    .product-section p {
       font-size: 0.9rem;
       font-weight: 300;
       color: var(--muted);
       line-height: 1.9;
-      max-width: 520px;
+      max-width: 540px;
     }
 
-    .problem-section p strong {
+    .product-section p strong {
       color: var(--ink);
       font-weight: 600;
     }
 
-    /* Numbered feature grid */
+
+    /* ── Who Section ─────────────────────────────────────── */
+    .who-section {
+      padding: 100px 48px;
+      border-top: 1px solid var(--border);
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .who-section h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--black);
+      letter-spacing: -0.5px;
+      margin-bottom: 28px;
+    }
+
+    .who-section h2 .soft {
+      font-weight: 300;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .who-section p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 540px;
+      margin-bottom: 56px;
+    }
+
+    .who-section p strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Feature list */
     .feature-list {
-      margin-top: 56px;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 0;
@@ -491,47 +445,15 @@
       margin-bottom: 44px;
     }
 
-    /* Dark form variant */
-    .bottom-cta .input-row {
-      border-color: rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-    }
-
-    .bottom-cta .input-row:focus-within {
-      border-color: var(--gold);
-    }
-
-    .bottom-cta .waitlist-form input {
-      color: white;
-    }
-
-    .bottom-cta .waitlist-form input::placeholder {
-      color: rgba(255,255,255,0.2);
-    }
-
-    .bottom-cta .waitlist-form button {
-      background: var(--gold);
-      color: var(--black);
-      border-left-color: rgba(255,255,255,0.12);
-    }
-
-    .bottom-cta .waitlist-form button:hover {
-      background: white;
+    /* Dark form wrapper */
+    .bottom-cta .waitlist-wrap {
+      animation: none;
+      opacity: 1;
     }
 
     .bottom-cta .form-note {
       color: rgba(255,255,255,0.2);
     }
-
-    .bottom-cta .form-error { color: #f87171; }
-
-    .bottom-cta .success-msg {
-      border-color: rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.04);
-    }
-
-    .bottom-cta .success-msg p { color: white; }
-    .bottom-cta .success-msg span { color: rgba(255,255,255,0.4); }
 
 
     /* ── Footer ──────────────────────────────────────────── */
@@ -616,25 +538,12 @@
       .hero { padding: 110px 20px 60px; }
 
       .countdown-section,
-      .problem-section,
+      .product-section,
+      .who-section,
       .bottom-cta { padding: 64px 20px; }
 
       .countdown-block { padding: 20px 6px; }
       .countdown-number { font-size: 2.2rem; }
-
-      .input-row { flex-direction: column; }
-
-      .waitlist-form button {
-        border-left: none;
-        border-top: 1.5px solid var(--border);
-        padding: 14px;
-        width: 100%;
-        min-width: unset;
-      }
-
-      .bottom-cta .waitlist-form button {
-        border-top-color: rgba(255,255,255,0.1);
-      }
 
       footer {
         flex-direction: column;
@@ -660,33 +569,42 @@
   <!-- Hero -->
   <section class="hero">
 
-    <p class="hero-eyebrow">The world's first snap-fit power bank pouch</p>
+    <p class="hero-eyebrow">A marketplace for people with taste</p>
 
     <h1 class="hero-headline">
-      Protection<br>
-      <span class="soft">finally designed.</span>
+      You don't carry things.<br>
+      <span class="soft">You carry who you are.</span>
     </h1>
 
     <div class="hero-rule"></div>
 
     <p class="hero-sub">
-      Your power bank survives everything you put it through —
-      except a drop. <strong>Cladd fixes that.</strong>
-      360° snap-fit protection with port access built in.
-      Be first in line when it launches.
+      Some people pick up whatever's around.
+      <strong>You're not that person.</strong>
+      Cladd is a marketplace where independent artists
+      design what you carry — starting with the world's
+      first snap-fit power bank pouch. Be first to carry it.
     </p>
 
     <div class="waitlist-wrap">
       <div class="waitlist-form" id="hero-form">
-       <iframe data-tally-src="https://tally.so/embed/eqLgLQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="null"></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
-        <p class="form-error" id="hero-error"></p>
+        <iframe
+          data-tally-src="https://tally.so/embed/eqLgLQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="200"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Cladd Waitlist">
+        </iframe>
+        <script>
+          var d=document,w="https://tally.so/widgets/embed.js",
+          v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};
+          if("undefined"!=typeof Tally)v();
+          else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+        </script>
         <p class="form-note">No spam. One email when we launch.</p>
-      </div>
-      <div class="success-msg" id="hero-success">
-        <span class="success-icon">✦</span>
-        <p>You're on the list.</p>
-        <span>We'll reach out when Cladd is ready.</span>
       </div>
     </div>
 
@@ -695,7 +613,7 @@
 
   <!-- Countdown -->
   <section class="countdown-section">
-    <p class="countdown-eyebrow reveal">Estimated launch</p>
+    <p class="countdown-eyebrow reveal">Until the people meet the art</p>
     <div class="countdown-grid reveal">
       <div class="countdown-block">
         <span class="countdown-number" id="cd-days">00</span>
@@ -717,46 +635,71 @@
   </section>
 
 
-  <!-- Problem / Solution -->
-  <section class="problem-section">
+  <!-- The Product — described through the person -->
+  <section class="product-section">
 
-    <span class="section-label reveal">The problem</span>
+    <span class="section-label reveal">What we're building</span>
 
     <h2 class="reveal">
-      Power banks break.<br>
-      <span class="soft">Nothing protects them.</span>
+      The person who carries Cladd<br>
+      <span class="soft">never goes unnoticed.</span>
     </h2>
 
     <p class="reveal">
-      You charge your phone with it every day.
-      It sits loose in your bag, gets scratched on keys,
-      dropped on floors, cracked on concrete.
-      <strong>Not a single product on the market was built to protect it.</strong>
-      Cladd is the first — a snap-fit pouch with 360° coverage
-      and a built-in port access cutout so you never have
-      to remove it to charge.
+      You carry your power bank every single day.
+      It keeps your phone alive — but nobody ever thought
+      to make it say something about you.
+      Until now. <strong>Cladd is building the world's first
+      snap-fit power bank pouch</strong> — a protective case
+      that clicks on, holds firm from every angle, and comes
+      printed with original art by real independent artists.
+      A peel-back port section means you never have to take
+      it off to charge. It stays on. Just like your identity.
+    </p>
+
+  </section>
+
+
+  <!-- Who Cladd Is For — marketplace explained -->
+  <section class="who-section">
+
+    <span class="section-label reveal">Who this is for</span>
+
+    <h2 class="reveal">
+      You've always had taste.<br>
+      <span class="soft">The market never caught up.</span>
+    </h2>
+
+    <p class="reveal">
+      You know who you are. You just haven't been able to show it
+      through everything you carry — until now.
+      <strong>Cladd is a marketplace that connects independent artists
+      from around the world to people like you.</strong>
+      Artists pour their identity into every design.
+      You choose the one that speaks yours.
+      Then you carry it — protected, personal, and completely you.
     </p>
 
     <div class="feature-list reveal-group">
       <div class="feature-item">
         <span class="feature-num">01</span>
-        <span class="feature-label">360° Protection</span>
-        <span class="feature-desc">Full coverage snap-fit design. Nothing left exposed.</span>
+        <span class="feature-label">The Person Who Carries Cladd</span>
+        <span class="feature-desc">Intentional. Distinctive. They don't own generic things. They choose what represents them.</span>
       </div>
       <div class="feature-item">
         <span class="feature-num">02</span>
-        <span class="feature-label">Port Access Cutout</span>
-        <span class="feature-desc">Peel-back section for charging. Stays attached.</span>
+        <span class="feature-label">The Artist Behind It</span>
+        <span class="feature-desc">Independent creators who design for people, not algorithms. Every piece is original. Every sale pays a real person.</span>
       </div>
       <div class="feature-item">
         <span class="feature-num">03</span>
-        <span class="feature-label">Artist Designs</span>
-        <span class="feature-desc">Every pouch carries original independent art.</span>
+        <span class="feature-label">The Marketplace</span>
+        <span class="feature-desc">Cladd connects artists to the people who were always meant to carry their work. That's the whole idea.</span>
       </div>
       <div class="feature-item">
         <span class="feature-num">04</span>
-        <span class="feature-label">Ships Worldwide</span>
-        <span class="feature-desc">Built for everyone, anywhere on the planet.</span>
+        <span class="feature-label">The Community</span>
+        <span class="feature-desc">Wherever you are in the world, your identity travels with you. And someone out there is already making art just for you.</span>
       </div>
     </div>
 
@@ -766,30 +709,36 @@
   <!-- Bottom CTA -->
   <section class="bottom-cta">
 
-    <span class="section-label">Don't miss the launch</span>
+    <span class="section-label">This is your invitation</span>
 
     <h2>
-      Be first.<br>
-      <span class="soft">Always.</span>
+      Be the first version<br>
+      <span class="soft">of yourself.</span>
     </h2>
 
     <div class="hero-rule" style="margin:32px auto;"></div>
 
-    <p>Early waitlist members get first access and launch pricing.</p>
+    <p>Early members get first access. First pick of every artist.<br>First to carry what nobody else has yet.</p>
 
     <div class="waitlist-wrap" style="margin: 0 auto;">
       <div class="waitlist-form" id="bottom-form">
-        <div class="input-row" id="bottom-row">
-         <iframe data-tally-src="https://tally.so/embed/eqLgLQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="null"></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
-        </div>
-        <p class="form-error" id="bottom-error"></p>
+        <iframe
+          data-tally-src="https://tally.so/embed/eqLgLQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="200"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Cladd Waitlist">
+        </iframe>
+        <script>
+          var d=document,w="https://tally.so/widgets/embed.js",
+          v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};
+          if("undefined"!=typeof Tally)v();
+          else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+        </script>
         <p class="form-note">No spam. One email when we launch.</p>
-      </div>
-      <div class="success-msg" id="bottom-success">
-        <span class="success-icon">✦</span>
-        <p>You're on the list.</p>
-        <span>We'll reach out when Cladd is ready.</span>
       </div>
     </div>
 
@@ -810,16 +759,7 @@
 
   <script>
 
-    // ── Supabase client ───────────────────────────────────
-    const { createClient } = supabase;
-    const sb = createClient(
-      'https://izpcmdzozqzelzxirjro.supabase.co',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml6cGNtZHpvenF6ZWx6eGlyanJvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ3MzQ0MTAsImV4cCI6MjA5MDMxMDQxMH0.HMbM97QskfKMsH9wSDvUgvVyfRFDpV6Lb7ccwOyx4yk'
-    );
-
-
     // ── Countdown ─────────────────────────────────────────
-    // Update this date when you have a confirmed launch date
     const launchDate = new Date('2026-08-01T00:00:00').getTime();
 
     function tick() {
@@ -834,71 +774,6 @@
 
     tick();
     setInterval(tick, 1000);
-
-
-    // ── Waitlist ──────────────────────────────────────────
-    async function joinWaitlist(prefix) {
-      const input   = document.getElementById(`${prefix}-email`);
-      const btn     = document.getElementById(`${prefix}-btn`);
-      const btnText = document.getElementById(`${prefix}-btn-text`);
-      const spinner = document.getElementById(`${prefix}-spinner`);
-      const errorEl = document.getElementById(`${prefix}-error`);
-      const formEl  = document.getElementById(`${prefix}-form`);
-      const success = document.getElementById(`${prefix}-success`);
-      const row     = document.getElementById(`${prefix}-row`);
-      const email   = input.value.trim();
-
-      // Reset error state
-      errorEl.style.display = 'none';
-      row.classList.remove('error');
-
-      // Validate email
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        row.classList.add('error');
-        errorEl.textContent = 'Please enter a valid email address.';
-        errorEl.style.display = 'block';
-        return;
-      }
-
-      // Show loading state
-      btn.disabled    = true;
-      btnText.style.display  = 'none';
-      spinner.style.display  = 'block';
-
-      try {
-        // Insert into Supabase waitlist table
-        const { error } = await sb
-          .from('waitlist')
-          .insert([{ email }]);
-
-        if (error) {
-          // Code 23505 = unique violation (email already exists)
-          if (error.code === '23505') {
-            formEl.style.display    = 'none';
-            success.style.display   = 'flex';
-            // Personalise the success message
-            success.querySelector('p').textContent   = 'Already on the list!';
-            success.querySelector('span').textContent = 'This email is already registered. We\'ll be in touch.';
-          } else {
-            throw error;
-          }
-        } else {
-          // Success
-          formEl.style.display  = 'none';
-          success.style.display = 'flex';
-        }
-
-      } catch (err) {
-        // Restore button and show error
-        btn.disabled           = false;
-        btnText.style.display  = 'inline';
-        spinner.style.display  = 'none';
-        row.classList.add('error');
-        errorEl.textContent    = 'Something went wrong. Please try again.';
-        errorEl.style.display  = 'block';
-        console.error('Supabase error:', err);
-      }
-    }
 
 
     // ── Scroll Reveal ─────────────────────────────────────
