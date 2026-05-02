@@ -1,0 +1,250 @@
+<!--
+  ============================================================
+  CLADD — about_page.html
+  Rebranded from Pouchify. Identity-first copy.
+  New header standard: FA icons, brand lockup.
+  FA 6.6.0 for X icon support.
+  ============================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Cladd</title>
+  <meta name="description" content="Cladd was built by someone who got tired of carrying things that said nothing about him. This is the story of why that changed.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="about_page.css">
+  <link rel="icon" href="img.png" type="image/x-icon">
+</head>
+<body>
+
+<header>
+  <button id="hamburger" onclick="toggleSidebar()">
+    <span></span><span></span><span></span>
+  </button>
+
+  <aside id="sidebar" class="closed">
+    <ul>
+      <a href="#"><li><div class="img_div"><img src="all.jpg" alt="Power Bank Pouches"></div>Power Bank Pouches</li></a>
+      <a href="#"><li><div class="img_div"><img src="t1.jpg" alt="Phone Pouches"></div>Phone Pouches</li></a>
+      <a href="#"><li><div class="img_div"><img src="ank.jpg" alt="Accessories"></div>Accessories</li></a>
+      <a href="#"><li><div class="img_div"><img src="itel.jpg" alt="Coupons"></div>Coupons</li></a>
+      <a href="#"><li><div class="img_div"><img src="haw.jpg" alt="Refer & Earn"></div>Refer &amp; Earn</li></a>
+    </ul>
+    <div class="centers">
+      <ul>
+        <a href="return_center.html"><li>Return Center</li></a>
+        <a href="help_center_page.html"><li>Help Center</li></a>
+        <a href="device_help.html"><li>Can't find my model</li></a>
+      </ul>
+    </div>
+    <div class="profile_link">
+      <a href="how_it_works_page.html">
+        <div class="img_div"><img src="itel.jpg" alt="Profile"></div>
+        <h1>Username / Shop</h1>
+      </a>
+    </div>
+  </aside>
+
+  <div class="right">
+    <div class="icon_links">
+      <a href="favorites_page.html" aria-label="Favorites"><i class="fa-regular fa-heart"></i></a>
+      <a href="shopping_cart_page.html" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+    </div>
+    <a href="home_page.html" class="brand-lockup">
+      <img src="img.png" alt="Cladd logo" class="brand-logo">
+      <h1>Cladd</h1>
+    </a>
+  </div>
+
+  <div class="search_form_container">
+    <form method="post">
+      <input type="text" placeholder="Search themes, products,...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+</header>
+
+
+<main>
+
+  <!-- Who We Are -->
+  <section class="first_section">
+    <p class="eyebrow">Who we are</p>
+    <h1>We were tired of carrying things<br>that said nothing about us.</h1>
+    <div class="about_content">
+      <div class="about_text">
+        <p>Cladd was founded by Shalom Okpapi — not in a boardroom,
+          not with funding, but with a cracked power bank and a
+          clear frustration. Power banks are one of the most carried
+          objects on the planet. And for years, nobody thought to
+          make them personal.
+        </p>
+        <blockquote>
+          "I wanted protection, style, and personality — all in one.
+          The market offered nothing that came close. So I decided to
+          build it myself. Now look at where we are."
+          <cite>— Shalom Okpapi, Founder</cite>
+        </blockquote>
+      </div>
+      <div class="about_img">
+        <img src="t3.jpg" alt="Cladd product">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Our Mission -->
+  <section class="second_section">
+    <p class="eyebrow">Our mission</p>
+    <h1>Protect. Style. Charge.</h1>
+    <div class="about_content">
+      <div class="about_text">
+        <p>Our mission is to give every person on the planet a way
+          to carry their power bank with intention. We believe your
+          everyday accessories should reflect who you are — not just
+          what they do.
+        </p>
+        <p>That's why we built a marketplace where independent artists
+          design the pouches, and you choose the one that resonates with
+          you. Every purchase supports a real creative. Every pouch tells
+          a real story. We're not building a product —
+          <strong>we're building a culture around functional art.</strong>
+        </p>
+      </div>
+      <div class="about_imgs">
+        <img src="artist.jpg" alt="Cladd artist">
+        <img src="artist2.jpg" alt="Cladd artist">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Who Can Join -->
+  <section class="third_section">
+    <p class="eyebrow">Open to everyone</p>
+    <h1>Who Can Join?</h1>
+    <p>Anyone — and for free. We invite creators from anywhere
+      in the world to pour their identity into their designs and
+      earn from it. Or come as a customer — explore our marketplace
+      and find art that finally looks like you.
+    </p>
+    <a href="index.html"><button>Join the Movement</button></a>
+  </section>
+
+
+  <!-- Trust Bar -->
+  <section class="fourth_section">
+    <div class="container">
+      <div class="item">
+        <img src="world.png" alt="Worldwide Shipping">
+        <p>Worldwide Shipping</p>
+      </div>
+      <div class="item">
+        <img src="limt.png" alt="Limited Warranty">
+        <p>Limited Warranty</p>
+      </div>
+      <div class="item">
+        <img src="secured.png" alt="Secured Payments">
+        <p>Secured Payments</p>
+      </div>
+      <div class="item">
+        <img src="local.png" alt="Local Support">
+        <p>Local Support</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-column">
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="shop_haven.html">Power Bank Pouches</a></li>
+        <li><a href="shop_haven.html">Stickers</a></li>
+        <li><a href="shop_haven.html">Phone Pouches</a></li>
+        <li><a href="shop_haven.html">Tablet Pouches</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Sell</h3>
+      <ul>
+        <li><a href="landing_page.html">Become an Artist</a></li>
+        <li><a href="design_tips.html">Design Tips</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="about_page.html">Our Story</a></li>
+        <li><a href="affiliate_page.html">Refer &amp; Earn</a></li>
+        <li><a href="home_page.html">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="help_center_page.html">Help Center</a></li>
+        <li><a href="contact_page.html">Contact Us</a></li>
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">User Agreements</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-title">Socials</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="subscribe_div">
+    <h2>Newsletter &amp; Special Offers</h2>
+    <form method="post">
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <div class="copyright">
+    &copy; 2025 Cladd. All rights reserved. Built to protect.
+  </div>
+</footer>
+
+
+<script>
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('active');
+    document.getElementById('hamburger').classList.toggle('close');
+  }
+
+  document.addEventListener('click', function (e) {
+    const sidebar   = document.getElementById('sidebar');
+    const hamburger = document.getElementById('hamburger');
+    if (sidebar.classList.contains('active') &&
+        !sidebar.contains(e.target) &&
+        !hamburger.contains(e.target)) {
+      sidebar.classList.remove('active');
+      hamburger.classList.remove('close');
+    }
+  });
+</script>
+
+</body>
+</html>

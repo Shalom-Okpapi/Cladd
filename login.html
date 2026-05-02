@@ -1,0 +1,159 @@
+<!--
+  ============================================================
+  CLADD — login.html
+  Rebranded from Pouchify. Identity-first copy.
+  Shares style.css with index.html.
+  FA 6.6.0 for X icon support.
+  ============================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Cladd</title>
+  <meta name="description" content="Welcome back to Cladd. Log in and pick up where you left off.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img.png" type="image/x-icon">
+</head>
+<body>
+
+<main>
+
+  <!-- Intro -->
+  <section class="intro-section">
+    <a href="home_page.html" class="brand-wordmark">Cladd</a>
+    <h2 class="welcome">Welcome back.</h2>
+    <p>Your identity is still here.<br>Pick up right where you left off.</p>
+  </section>
+
+
+  <!-- Login Form -->
+  <section class="form-section">
+    <form method="post" id="login-form">
+
+      <div class="input-wrapper">
+        <i class="fas fa-envelope input-icon"></i>
+        <input
+          type="email"
+          placeholder="Email address"
+          required
+        >
+      </div>
+
+      <div class="input-wrapper">
+        <i class="fas fa-lock input-icon"></i>
+        <input
+          type="password"
+          id="login-password"
+          placeholder="Password"
+          required
+        >
+        <i
+          class="fas fa-eye toggle-password"
+          title="Show password"
+          onclick="togglePassword()"
+        ></i>
+      </div>
+
+      <button type="submit">Log In</button>
+
+    </form>
+
+    <a id="forgot_password" href="recovery_page.html">Forgot your password?</a>
+    <a id="create_account" href="index.html">Don't have an account? Sign up free</a>
+
+  </section>
+
+</main>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-column">
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="shop_haven.html">Power Bank Pouches</a></li>
+        <li><a href="shop_haven.html">Stickers</a></li>
+        <li><a href="shop_haven.html">Phone Pouches</a></li>
+        <li><a href="shop_haven.html">Tablet Pouches</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Sell</h3>
+      <ul>
+        <li><a href="landing_page.html">Become an Artist</a></li>
+        <li><a href="design_tips.html">Design Tips</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="about_page.html">Our Story</a></li>
+        <li><a href="affiliate_page.html">Refer &amp; Earn</a></li>
+        <li><a href="home_page.html">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="help_center_page.html">Help Center</a></li>
+        <li><a href="contact_page.html">Contact Us</a></li>
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">User Agreements</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-title">Socials</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="subscribe_div">
+    <h2>Newsletter &amp; Special Offers</h2>
+    <form method="post">
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <div class="copyright">
+    &copy; 2025 Cladd. All rights reserved. Built to protect.
+  </div>
+</footer>
+
+
+<script>
+  function togglePassword() {
+    const input = document.getElementById('login-password');
+    const icon  = document.querySelector('.toggle-password');
+
+    if (input.type === 'password') {
+      input.type = 'text';
+      icon.classList.replace('fa-eye', 'fa-eye-slash');
+      icon.title = 'Hide password';
+    } else {
+      input.type = 'password';
+      icon.classList.replace('fa-eye-slash', 'fa-eye');
+      icon.title = 'Show password';
+    }
+  }
+</script>
+
+</body>
+</html>

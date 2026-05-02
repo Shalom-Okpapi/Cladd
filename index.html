@@ -3,792 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cladd — Built to Protect</title>
-  <meta name="description" content="You don't carry things. You carry who you are. Cladd is a marketplace where independent artists design what you carry — starting with the world's first snap-fit power bank pouch.">
-
-  <!-- Poppins — brand font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JSLB5BF9QH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JSLB5BF9QH');
-  </script>
-
-  <style>
-
-    /* ── Reset ───────────────────────────────────────────── */
-    *, *::before, *::after {
-      margin: 0; padding: 0;
-      box-sizing: border-box;
-      text-decoration: none;
-      list-style: none;
-      border: none; outline: none;
-    }
-
-    :root {
-      --black:  #0a0a0a;
-      --ink:    #1a1a1a;
-      --muted:  #888888;
-      --border: #e8e8e8;
-      --bg:     #ffffff;
-      --gold:   #c9a84c;
-      --font:   'Poppins', sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--ink);
-      min-height: 100vh;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-
-    /* ── Nav ─────────────────────────────────────────────── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 24px 48px;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-logo {
-      font-size: 1rem;
-      font-weight: 800;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: var(--black);
-    }
-
-    .nav-status {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .nav-status .dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--gold);
-      animation: blink 2s ease-in-out infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0.25; }
-    }
-
-
-    /* ── Hero ────────────────────────────────────────────── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 140px 48px 80px;
-      text-align: center;
-      position: relative;
-    }
-
-    /* Thin gold top rule */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(
-        90deg,
-        transparent 0%,
-        var(--gold) 25%,
-        var(--gold) 75%,
-        transparent 100%
-      );
-    }
-
-    .hero-eyebrow {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 32px;
-      opacity: 0;
-      animation: rise 0.9s 0.1s ease forwards;
-    }
-
-    .hero-headline {
-      font-size: clamp(2.8rem, 8vw, 6.5rem);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -2px;
-      color: var(--black);
-      margin-bottom: 8px;
-      opacity: 0;
-      animation: rise 0.9s 0.2s ease forwards;
-    }
-
-    .hero-headline .soft {
-      font-weight: 600;
-      font-style: italic;
-      color: var(--muted);
-      letter-spacing: -1px;
-    }
-
-    .hero-rule {
-      width: 36px;
-      height: 2px;
-      background: var(--gold);
-      margin: 36px auto;
-      opacity: 0;
-      animation: rise 0.9s 0.3s ease forwards;
-    }
-
-    .hero-sub {
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: var(--muted);
-      max-width: 440px;
-      line-height: 1.9;
-      margin-bottom: 48px;
-      opacity: 0;
-      animation: rise 0.9s 0.4s ease forwards;
-    }
-
-    .hero-sub strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-
-    /* ── Waitlist Form (Tally) ───────────────────────────── */
-    .waitlist-wrap {
-      width: 100%;
-      max-width: 420px;
-      opacity: 0;
-      animation: rise 0.9s 0.5s ease forwards;
-    }
-
-    .waitlist-form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .form-note {
-      font-size: 0.7rem;
-      font-weight: 400;
-      color: #ccc;
-      text-align: center;
-      letter-spacing: 0.2px;
-    }
-
-    .success-msg {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      padding: 24px 20px;
-      border: 1.5px solid var(--border);
-      border-radius: 6px;
-      text-align: center;
-    }
-
-    .success-icon {
-      font-size: 1.1rem;
-      color: var(--gold);
-      margin-bottom: 4px;
-    }
-
-    .success-msg p {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--black);
-    }
-
-    .success-msg span {
-      font-size: 0.75rem;
-      font-weight: 300;
-      color: var(--muted);
-    }
-
-
-    /* ── Countdown ───────────────────────────────────────── */
-    .countdown-section {
-      padding: 80px 48px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .countdown-eyebrow {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 48px;
-    }
-
-    .countdown-grid {
-      display: flex;
-      justify-content: center;
-      max-width: 440px;
-      margin: 0 auto;
-    }
-
-    .countdown-block {
-      flex: 1;
-      padding: 28px 12px;
-      border-right: 1px solid var(--border);
-    }
-
-    .countdown-block:last-child { border-right: none; }
-
-    .countdown-number {
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 800;
-      color: var(--black);
-      letter-spacing: -1px;
-      line-height: 1;
-      display: block;
-    }
-
-    .countdown-unit {
-      font-size: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 10px;
-      display: block;
-    }
-
-
-    /* ── Product Reveal Section ──────────────────────────── */
-    .product-section {
-      padding: 100px 48px;
-      border-top: 1px solid var(--border);
-      max-width: 860px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .section-label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 28px;
-      display: block;
-    }
-
-    .product-section h2 {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 800;
-      line-height: 1.15;
-      color: var(--black);
-      letter-spacing: -0.5px;
-      margin-bottom: 28px;
-    }
-
-    .product-section h2 .soft {
-      font-weight: 300;
-      font-style: italic;
-      color: var(--muted);
-    }
-
-    .product-section p {
-      font-size: 0.9rem;
-      font-weight: 300;
-      color: var(--muted);
-      line-height: 1.9;
-      max-width: 540px;
-    }
-
-    .product-section p strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-
-    /* ── Who Section ─────────────────────────────────────── */
-    .who-section {
-      padding: 100px 48px;
-      border-top: 1px solid var(--border);
-      max-width: 860px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .who-section h2 {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 800;
-      line-height: 1.15;
-      color: var(--black);
-      letter-spacing: -0.5px;
-      margin-bottom: 28px;
-    }
-
-    .who-section h2 .soft {
-      font-weight: 300;
-      font-style: italic;
-      color: var(--muted);
-    }
-
-    .who-section p {
-      font-size: 0.9rem;
-      font-weight: 300;
-      color: var(--muted);
-      line-height: 1.9;
-      max-width: 540px;
-      margin-bottom: 56px;
-    }
-
-    .who-section p strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    /* Feature list */
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 0;
-    }
-
-    .feature-item {
-      padding: 28px 24px 28px 0;
-      border-top: 1.5px solid var(--border);
-    }
-
-    .feature-num {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 12px;
-    }
-
-    .feature-label {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--black);
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .feature-desc {
-      font-size: 0.75rem;
-      font-weight: 300;
-      color: var(--muted);
-      line-height: 1.6;
-      display: block;
-    }
-
-
-    /* ── Bottom CTA ──────────────────────────────────────── */
-    .bottom-cta {
-      padding: 100px 48px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      background: var(--black);
-    }
-
-    .bottom-cta .section-label { color: var(--gold); }
-
-    .bottom-cta h2 {
-      font-size: clamp(2rem, 5.5vw, 4.5rem);
-      font-weight: 800;
-      line-height: 1.1;
-      color: white;
-      letter-spacing: -1px;
-      margin-bottom: 8px;
-    }
-
-    .bottom-cta h2 .soft {
-      font-weight: 300;
-      font-style: italic;
-      color: rgba(255,255,255,0.35);
-    }
-
-    .bottom-cta .hero-rule {
-      background: var(--gold);
-      opacity: 1;
-      animation: none;
-    }
-
-    .bottom-cta p {
-      font-size: 0.88rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.45);
-      margin-bottom: 44px;
-    }
-
-    /* Dark form wrapper */
-    .bottom-cta .waitlist-wrap {
-      animation: none;
-      opacity: 1;
-    }
-
-    .bottom-cta .form-note {
-      color: rgba(255,255,255,0.2);
-    }
-
-
-    /* ── Footer ──────────────────────────────────────────── */
-    footer {
-      background: var(--black);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 28px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .footer-logo {
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: white;
-    }
-
-    .footer-copy {
-      font-size: 0.68rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.2);
-      text-align: center;
-    }
-
-    .footer-socials {
-      display: flex;
-      gap: 24px;
-    }
-
-    .footer-socials a {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-      transition: color 0.2s ease;
-    }
-
-    .footer-socials a:hover { color: white; }
-
-
-    /* ── Scroll Reveal ───────────────────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-group > * {
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal-group.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay:0s; }
-    .reveal-group.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.08s; }
-    .reveal-group.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay:0.16s; }
-    .reveal-group.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.24s; }
-
-
-    /* ── Keyframes ───────────────────────────────────────── */
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-
-    /* ── Responsive ──────────────────────────────────────── */
-    @media (max-width: 640px) {
-      nav { padding: 18px 20px; }
-
-      .hero { padding: 110px 20px 60px; }
-
-      .countdown-section,
-      .product-section,
-      .who-section,
-      .bottom-cta { padding: 64px 20px; }
-
-      .countdown-block { padding: 20px 6px; }
-      .countdown-number { font-size: 2.2rem; }
-
-      footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 24px 20px;
-      }
-    }
-  </style>
+  <title>Sign Up | Cladd</title>
+  <meta name="description" content="Join Cladd. Sign up free today.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img.png" type="image/x-icon">
 </head>
 <body>
 
-  <!-- Nav -->
-  <nav>
-    <span class="nav-logo">Cladd</span>
-    <div class="nav-status">
-      <span class="dot"></span>
-      Coming Soon
-    </div>
-  </nav>
+<main>
 
-
-  <!-- Hero -->
-  <section class="hero">
-
-    <p class="hero-eyebrow">A marketplace for people with taste</p>
-
-    <h1 class="hero-headline">
-      You don't carry things.<br>
-      <span class="soft">You carry who you are.</span>
-    </h1>
-
-    <div class="hero-rule"></div>
-
-    <p class="hero-sub">
-      Some people pick up whatever's around.
-      <strong>You're not that person.</strong>
-      Cladd is a marketplace where independent artists
-      design what you carry — starting with the world's
-      first snap-fit power bank pouch. Be first to carry it.
+  <!-- Intro -->
+  <section class="intro-section">
+    <a href="home_page.html" class="brand-wordmark">Cladd</a>
+    <h2>Choose who you are joining as.</h2>
+    <p>Sign up free. No credit card. No catch.<br>
+      Just you, your identity, and a marketplace built around it.
     </p>
+  </section>
 
-    <div class="waitlist-wrap">
-      <div class="waitlist-form" id="hero-form">
-        <iframe
-          data-tally-src="https://tally.so/embed/eqLgLQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-          loading="lazy"
-          width="100%"
-          height="200"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          title="Cladd Waitlist">
-        </iframe>
-        <script>
-          var d=document,w="https://tally.so/widgets/embed.js",
-          v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};
-          if("undefined"!=typeof Tally)v();
-          else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
-        </script>
-        <p class="form-note">No spam. One email when we launch.</p>
+  <!-- Account Type Selector -->
+  <section class="opt-section">
+
+    <div class="opt-section_div" id="opt-customer" onclick="selectType('customer')">
+      <div class="opt-img_container">
+        <img src="cart.png" alt="Customer">
       </div>
+      <h3>I am here to shop</h3>
+      <p>Find art that looks like me and carry it everywhere.</p>
+    </div>
+
+    <div class="opt-section_div" id="opt-artist" onclick="selectType('artist')">
+      <div class="opt-img_container">
+        <img src="art.png" alt="Artist">
+      </div>
+      <h3>I am here to create</h3>
+      <p>Set up my shop and put my art in the real world.</p>
     </div>
 
   </section>
 
+  <!-- Signup Form -->
+  <section class="form-section">
+    <form method="post" id="signup-form" onsubmit="return validateForm()">
 
-  <!-- Countdown -->
-  <section class="countdown-section">
-    <p class="countdown-eyebrow reveal">Until the people meet the art</p>
-    <div class="countdown-grid reveal">
-      <div class="countdown-block">
-        <span class="countdown-number" id="cd-days">00</span>
-        <span class="countdown-unit">Days</span>
+      <input type="email" id="email" placeholder="Email address" required>
+
+      <div id="shop-name-field" style="display: none;">
+        <input type="text" id="shop-name" placeholder="Shop name">
       </div>
-      <div class="countdown-block">
-        <span class="countdown-number" id="cd-hours">00</span>
-        <span class="countdown-unit">Hours</span>
-      </div>
-      <div class="countdown-block">
-        <span class="countdown-number" id="cd-mins">00</span>
-        <span class="countdown-unit">Mins</span>
-      </div>
-      <div class="countdown-block">
-        <span class="countdown-number" id="cd-secs">00</span>
-        <span class="countdown-unit">Secs</span>
-      </div>
-    </div>
-  </section>
 
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="confirm-password" placeholder="Confirm password" required>
 
-  <!-- The Product — described through the person -->
-  <section class="product-section">
+      <p id="password-error" class="form-error" style="display: none;">
+        <i class="fas fa-exclamation-circle"></i> Passwords do not match.
+      </p>
 
-    <span class="section-label reveal">What we're building</span>
+      <button type="submit">Create My Account</button>
 
-    <h2 class="reveal">
-      The person who carries Cladd<br>
-      <span class="soft">never goes unnoticed.</span>
-    </h2>
+    </form>
 
-    <p class="reveal">
-      You carry your power bank every single day.
-      It keeps your phone alive — but nobody ever thought
-      to make it say something about you.
-      Until now. <strong>Cladd is building the world's first
-      snap-fit power bank pouch</strong> — a protective case
-      that clicks on, holds firm from every angle, and comes
-      printed with original art by real independent artists.
-      A peel-back port section means you never have to take
-      it off to charge. It stays on. Just like your identity.
+    <a href="login.html">Already have an account? Log in</a>
+
+    <p class="legal-text">
+      By signing up you agree to our
+      <a href="legal.html" class="legal-link">User Agreements</a> and
+      <a href="legal.html" class="legal-link">Privacy Policy</a>.
     </p>
-
   </section>
 
+</main>
 
-  <!-- Who Cladd Is For — marketplace explained -->
-  <section class="who-section">
-
-    <span class="section-label reveal">Who this is for</span>
-
-    <h2 class="reveal">
-      You've always had taste.<br>
-      <span class="soft">The market never caught up.</span>
-    </h2>
-
-    <p class="reveal">
-      You know who you are. You just haven't been able to show it
-      through everything you carry — until now.
-      <strong>Cladd is a marketplace that connects independent artists
-      from around the world to people like you.</strong>
-      Artists pour their identity into every design.
-      You choose the one that speaks yours.
-      Then you carry it — protected, personal, and completely you.
-    </p>
-
-    <div class="feature-list reveal-group">
-      <div class="feature-item">
-        <span class="feature-num">01</span>
-        <span class="feature-label">The Person Who Carries Cladd</span>
-        <span class="feature-desc">Intentional. Distinctive. They don't own generic things. They choose what represents them.</span>
-      </div>
-      <div class="feature-item">
-        <span class="feature-num">02</span>
-        <span class="feature-label">The Artist Behind It</span>
-        <span class="feature-desc">Independent creators who design for people, not algorithms. Every piece is original. Every sale pays a real person.</span>
-      </div>
-      <div class="feature-item">
-        <span class="feature-num">03</span>
-        <span class="feature-label">The Marketplace</span>
-        <span class="feature-desc">Cladd connects artists to the people who were always meant to carry their work. That's the whole idea.</span>
-      </div>
-      <div class="feature-item">
-        <span class="feature-num">04</span>
-        <span class="feature-label">The Community</span>
-        <span class="feature-desc">Wherever you are in the world, your identity travels with you. And someone out there is already making art just for you.</span>
-      </div>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="shop_haven.html">Power Bank Pouches</a></li>
+        <li><a href="shop_haven.html">Stickers</a></li>
+        <li><a href="shop_haven.html">Phone Pouches</a></li>
+        <li><a href="shop_haven.html">Tablet Pouches</a></li>
+      </ul>
     </div>
-
-  </section>
-
-
-  <!-- Bottom CTA -->
-  <section class="bottom-cta">
-
-    <span class="section-label">This is your invitation</span>
-
-    <h2>
-      Be the first version<br>
-      <span class="soft">of yourself.</span>
-    </h2>
-
-    <div class="hero-rule" style="margin:32px auto;"></div>
-
-    <p>Early members get first access. First pick of every artist.<br>First to carry what nobody else has yet.</p>
-
-    <div class="waitlist-wrap" style="margin: 0 auto;">
-      <div class="waitlist-form" id="bottom-form">
-        <iframe
-          data-tally-src="https://tally.so/embed/eqLgLQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-          loading="lazy"
-          width="100%"
-          height="200"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          title="Cladd Waitlist">
-        </iframe>
-        <script>
-          var d=document,w="https://tally.so/widgets/embed.js",
-          v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};
-          if("undefined"!=typeof Tally)v();
-          else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
-        </script>
-        <p class="form-note">No spam. One email when we launch.</p>
-      </div>
+    <div class="footer-column">
+      <h3>Sell</h3>
+      <ul>
+        <li><a href="landing_page.html">Become an Artist</a></li>
+        <li><a href="design_tips.html">Design Tips</a></li>
+      </ul>
     </div>
-
-  </section>
-
-
-  <!-- Footer -->
-  <footer>
-    <span class="footer-logo">Cladd</span>
-    <p class="footer-copy">&copy; 2025 Cladd. All rights reserved.</p>
-    <div class="footer-socials">
-      <a href="#">Instagram</a>
-      <a href="#">Pinterest</a>
-      <a href="#">X</a>
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="about_page.html">Our Story</a></li>
+        <li><a href="affiliate_page.html">Refer &amp; Earn</a></li>
+        <li><a href="home_page.html">Careers</a></li>
+      </ul>
     </div>
-  </footer>
+    <div class="footer-column">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="help_center_page.html">Help Center</a></li>
+        <li><a href="contact_page.html">Contact Us</a></li>
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">User Agreements</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Socials</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="subscribe_div">
+    <h2>Newsletter &amp; Special Offers</h2>
+    <form method="post">
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <div class="copyright">
+    &copy; 2025 Cladd. All rights reserved. Built to protect.
+  </div>
+</footer>
 
+<script>
+  var selectedType = null;
 
-  <script>
+  function selectType(type) {
+    selectedType = type;
 
-    // ── Countdown ─────────────────────────────────────────
-    const launchDate = new Date('2026-08-01T00:00:00').getTime();
+    document.getElementById('opt-customer').classList.remove('active');
+    document.getElementById('opt-artist').classList.remove('active');
+    document.getElementById('opt-' + type).classList.add('active');
 
-    function tick() {
-      const diff = launchDate - Date.now();
-      if (diff <= 0) return;
-      const pad = n => String(Math.floor(n)).padStart(2, '0');
-      document.getElementById('cd-days').textContent  = pad(diff / 864e5);
-      document.getElementById('cd-hours').textContent = pad((diff % 864e5) / 36e5);
-      document.getElementById('cd-mins').textContent  = pad((diff % 36e5) / 6e4);
-      document.getElementById('cd-secs').textContent  = pad((diff % 6e4) / 1e3);
+    localStorage.setItem('cladd_account_type', type);
+
+    var shopField = document.getElementById('shop-name-field');
+    var shopInput = document.getElementById('shop-name');
+
+    if (type === 'artist') {
+      shopField.style.display = 'block';
+      shopInput.required = true;
+    } else {
+      shopField.style.display = 'none';
+      shopInput.required = false;
+      shopInput.value = '';
+    }
+  }
+
+  function validateForm() {
+    var password = document.getElementById('password').value;
+    var confirm  = document.getElementById('confirm-password').value;
+    var errorMsg = document.getElementById('password-error');
+
+    if (password !== confirm) {
+      errorMsg.style.display = 'flex';
+      return false;
     }
 
-    tick();
-    setInterval(tick, 1000);
+    errorMsg.style.display = 'none';
 
+    if (!selectedType) {
+      alert('Please select how you are joining - as a shopper or a creator.');
+      return false;
+    }
 
-    // ── Scroll Reveal ─────────────────────────────────────
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal, .reveal-group').forEach(el => io.observe(el));
-
-  </script>
+    return true;
+  }
+</script>
 
 </body>
 </html>

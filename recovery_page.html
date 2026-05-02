@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset Password | Cladd</title>
+  <meta name="description" content="Reset your Cladd password. Enter your email and we'll send you a recovery link.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="img.png" type="image/x-icon">
+</head>
+<body>
+
+<header class="article-header">
+  <a href="home_page.html" class="brand-lockup">
+    <img src="img.png" alt="Cladd logo" class="brand-logo">
+    <h1>Cladd</h1>
+  </a>
+  <nav class="article-header-nav">
+    <a href="home_page.html">Home</a>
+    <a href="login.html">Log In</a>
+    <a href="index.html">Sign Up</a>
+    <a href="help_center_page.html">Help</a>
+  </nav>
+  <div class="article-header-icons">
+    <a href="favorites_page.html" aria-label="Favorites"><i class="fa-regular fa-heart"></i></a>
+    <a href="shopping_cart_page.html" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+  </div>
+</header>
+
+<!-- Recovery form — uses .recovery-wrap from article.css -->
+<div class="recovery-wrap">
+
+  <i class="fas fa-lock" style="font-size:2.2rem; color:#e5e7eb; margin-bottom:16px;"></i>
+
+  <h1>Forgot your password?</h1>
+  <p>No problem. Enter the email address on your Cladd account and we'll send you a link to reset it.</p>
+
+  <!-- Step 1 — Email entry -->
+  <form class="recovery-form" id="step-1" onsubmit="sendReset(event)">
+    <div style="position:relative;">
+      <input
+        type="email"
+        id="recovery-email"
+        placeholder="Your email address"
+        required
+        style="padding-left: 40px;"
+      >
+      <i class="fas fa-envelope" style="position:absolute; left:14px; top:50%; transform:translateY(-50%); color:#bbb; font-size:0.85rem;"></i>
+    </div>
+    <button type="submit">Send Reset Link</button>
+  </form>
+
+  <!-- Step 2 — Confirmation (hidden until submit) -->
+  <div id="step-2" style="display:none; flex-direction:column; align-items:center; gap:12px; text-align:center;">
+    <i class="fas fa-envelope-open-text" style="font-size:2.4rem; color:#007acc;"></i>
+    <p style="font-size:1rem; font-weight:600; color:#07101b; margin:0;">Check your inbox.</p>
+    <p style="font-size:0.88rem; font-weight:300; color:#6b7280; margin:0;">
+      If an account exists for <strong id="sent-email"></strong>,
+      a reset link is on its way. Check your spam folder if it doesn't arrive within a few minutes.
+    </p>
+    <a href="login.html" class="back-link" style="margin-top:8px;">
+      <i class="fas fa-arrow-left" style="margin-right:6px;"></i> Back to Login
+    </a>
+  </div>
+
+  <a href="login.html" class="back-link" id="back-link">
+    <i class="fas fa-arrow-left" style="margin-right:6px;"></i> Back to Login
+  </a>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="shop_haven.html">Power Bank Pouches</a></li>
+        <li><a href="shop_haven.html">Phone Pouches</a></li>
+        <li><a href="shop_haven.html">Stickers</a></li>
+        <li><a href="shop_haven.html">Tablet Pouches</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Sell</h3>
+      <ul>
+        <li><a href="landing_page.html">Become an Artist</a></li>
+        <li><a href="design_tips.html">Design Tips</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="about_page.html">Our Story</a></li>
+        <li><a href="affiliate_page.html">Refer &amp; Earn</a></li>
+        <li><a href="home_page.html">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="help_center_page.html">Help Center</a></li>
+        <li><a href="contact_page.html">Contact Us</a></li>
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">User Agreements</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Socials</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="subscribe_div">
+    <h2>Newsletter &amp; Special Offers</h2>
+    <form method="post">
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <div class="copyright">&copy; 2025 Cladd. All rights reserved. Built to protect.</div>
+</footer>
+
+<script>
+  function sendReset(e) {
+    e.preventDefault();
+    const email = document.getElementById('recovery-email').value.trim();
+    document.getElementById('sent-email').textContent = email;
+    document.getElementById('step-1').style.display    = 'none';
+    document.getElementById('back-link').style.display = 'none';
+    const step2 = document.getElementById('step-2');
+    step2.style.display = 'flex';
+  }
+</script>
+
+</body>
+</html>

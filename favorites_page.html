@@ -1,0 +1,322 @@
+<!--
+  ============================================================
+  CLADD — favorites_page.html
+  Rebranded from Pouchify. Identity-first copy.
+  New header standard: FA icons, brand lockup.
+  FA 6.6.0. Luxury spacing.
+  ============================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Favorites | Cladd</title>
+  <meta name="description" content="The designs you connected with. All in one place.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="favorites_page.css">
+  <link rel="icon" href="img.png" type="image/x-icon">
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────────────── -->
+<header>
+  <button id="hamburger" onclick="toggleSidebar()">
+    <span></span><span></span><span></span>
+  </button>
+
+  <aside id="sidebar" class="closed">
+    <ul>
+      <a href="#"><li><div class="img_div"><img src="all.jpg" alt="Power Bank Pouches"></div>Power Bank Pouches</li></a>
+      <a href="#"><li><div class="img_div"><img src="t1.jpg" alt="Phone Pouches"></div>Phone Pouches</li></a>
+      <a href="#"><li><div class="img_div"><img src="ank.jpg" alt="Accessories"></div>Accessories</li></a>
+      <a href="#"><li><div class="img_div"><img src="itel.jpg" alt="Coupons"></div>Coupons</li></a>
+      <a href="#"><li><div class="img_div"><img src="haw.jpg" alt="Refer & Earn"></div>Refer &amp; Earn</li></a>
+    </ul>
+    <div class="centers">
+      <ul>
+        <a href="return_center.html"><li>Return Center</li></a>
+        <a href="help_center_page.html"><li>Help Center</li></a>
+        <a href="device_help.html"><li>Can't find my model</li></a>
+      </ul>
+    </div>
+    <div class="profile_link">
+      <a href="how_it_works_page.html">
+        <div class="img_div"><img src="itel.jpg" alt="Profile"></div>
+        <h1>Username / Shop</h1>
+      </a>
+    </div>
+  </aside>
+
+  <div class="right">
+    <div class="icon_links">
+      <a href="favorites_page.html" aria-label="Favorites"><i class="fa-regular fa-heart"></i></a>
+      <a href="shopping_cart_page.html" aria-label="Cart" class="cart-icon-link">
+        <i class="fa-solid fa-bag-shopping"></i>
+      </a>
+    </div>
+    <a href="home_page.html" class="brand-lockup">
+      <img src="img.png" alt="Cladd logo" class="brand-logo">
+      <h1>Cladd</h1>
+    </a>
+  </div>
+
+  <div class="search_form_container">
+    <form method="post">
+      <input type="text" placeholder="Search themes, products,...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+</header>
+
+
+<main>
+
+  <!-- ── Page Title ──────────────────────────────────────── -->
+  <section class="first_section">
+    <p class="eyebrow">Your taste, saved</p>
+    <h1>My Favorites</h1>
+    <p class="sub">The designs you connected with. All in one place.</p>
+    <div class="section-divider"></div>
+  </section>
+
+
+  <!-- ── Favorites Header ────────────────────────────────── -->
+  <div class="favorites-header" id="fav-header">
+    <span id="item-count">3 items saved</span>
+    <button class="clear-all-btn" onclick="clearAll()">
+      <i class="fas fa-trash-alt"></i> Clear All
+    </button>
+  </div>
+
+
+  <!-- ── Favorites Grid ──────────────────────────────────── -->
+  <section class="favorites-grid" id="favorites-grid">
+
+    <!-- Item 1 -->
+    <div class="favorite-item" id="item-1">
+      <div class="card-image-wrap">
+        <img src="t1.jpg" alt="Cosmic Cat Astronaut" class="product-image">
+        <button
+          class="wishlist-btn wishlisted"
+          onclick="removeFromFavorites('item-1')"
+          title="Remove from Favorites">
+          <i class="fa-solid fa-heart"></i>
+        </button>
+      </div>
+      <div class="card-info">
+        <div class="card-meta">
+          <p class="product-title">Cosmic Cat Astronaut</p>
+          <p class="artist-name">by SpaceArtist</p>
+        </div>
+        <div class="card-actions">
+          <p class="price">$24.50</p>
+          <button class="cart-btn" title="Add to Cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="favorite-item" id="item-2">
+      <div class="card-image-wrap">
+        <img src="t2.jpg" alt="Retro Sunset Waves" class="product-image">
+        <button
+          class="wishlist-btn wishlisted"
+          onclick="removeFromFavorites('item-2')"
+          title="Remove from Favorites">
+          <i class="fa-solid fa-heart"></i>
+        </button>
+      </div>
+      <div class="card-info">
+        <div class="card-meta">
+          <p class="product-title">Retro Sunset Waves</p>
+          <p class="artist-name">by VintageDreamer</p>
+        </div>
+        <div class="card-actions">
+          <p class="price">$19.99</p>
+          <button class="cart-btn" title="Add to Cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="favorite-item" id="item-3">
+      <div class="card-image-wrap">
+        <img src="t3.jpg" alt="Minimal Mountains" class="product-image">
+        <button
+          class="wishlist-btn wishlisted"
+          onclick="removeFromFavorites('item-3')"
+          title="Remove from Favorites">
+          <i class="fa-solid fa-heart"></i>
+        </button>
+      </div>
+      <div class="card-info">
+        <div class="card-meta">
+          <p class="product-title">Minimal Mountains</p>
+          <p class="artist-name">by ArtSimplified</p>
+        </div>
+        <div class="card-actions">
+          <p class="price">$22.00</p>
+          <button class="cart-btn" title="Add to Cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ── Empty State ─────────────────────────────────────── -->
+  <div class="empty-state" id="empty-state" style="display: none;">
+    <i class="fa-regular fa-heart empty-icon"></i>
+    <h2>Nothing saved yet.</h2>
+    <p>When you find a design that looks like you,<br>heart it and it'll live here.</p>
+    <a href="shop_haven.html">
+      <button class="explore-btn">Browse Designs</button>
+    </a>
+  </div>
+
+</main>
+
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-column">
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="shop_haven.html">Power Bank Pouches</a></li>
+        <li><a href="shop_haven.html">Stickers</a></li>
+        <li><a href="shop_haven.html">Phone Pouches</a></li>
+        <li><a href="shop_haven.html">Tablet Pouches</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Sell</h3>
+      <ul>
+        <li><a href="landing_page.html">Become an Artist</a></li>
+        <li><a href="design_tips.html">Design Tips</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="about_page.html">Our Story</a></li>
+        <li><a href="affiliate_page.html">Refer &amp; Earn</a></li>
+        <li><a href="home_page.html">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="help_center_page.html">Help Center</a></li>
+        <li><a href="contact_page.html">Contact Us</a></li>
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">User Agreements</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-title">Socials</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="subscribe_div">
+    <h2>Newsletter &amp; Special Offers</h2>
+    <form method="post">
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <div class="copyright">
+    &copy; 2025 Cladd. All rights reserved. Built to protect.
+  </div>
+</footer>
+
+
+<script>
+  // ── Sidebar ───────────────────────────────────────────────
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('active');
+    document.getElementById('hamburger').classList.toggle('close');
+  }
+
+  document.addEventListener('click', function (e) {
+    const sidebar   = document.getElementById('sidebar');
+    const hamburger = document.getElementById('hamburger');
+    if (sidebar.classList.contains('active') &&
+        !sidebar.contains(e.target) &&
+        !hamburger.contains(e.target)) {
+      sidebar.classList.remove('active');
+      hamburger.classList.remove('close');
+    }
+  });
+
+
+  // ── Remove single item ────────────────────────────────────
+  function removeFromFavorites(itemId) {
+    const item = document.getElementById(itemId);
+    item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    item.style.opacity    = '0';
+    item.style.transform  = 'scale(0.95)';
+    setTimeout(() => {
+      item.remove();
+      updateCount();
+      checkEmpty();
+    }, 300);
+  }
+
+
+  // ── Clear all ─────────────────────────────────────────────
+  function clearAll() {
+    document.querySelectorAll('.favorite-item').forEach(item => {
+      item.style.transition = 'opacity 0.3s ease';
+      item.style.opacity    = '0';
+    });
+    setTimeout(() => {
+      document.querySelectorAll('.favorite-item').forEach(item => item.remove());
+      updateCount();
+      checkEmpty();
+    }, 300);
+  }
+
+
+  // ── Update counter ────────────────────────────────────────
+  function updateCount() {
+    const n       = document.querySelectorAll('.favorite-item').length;
+    const counter = document.getElementById('item-count');
+    counter.textContent = n === 1 ? '1 item saved' : `${n} items saved`;
+  }
+
+
+  // ── Show empty state ──────────────────────────────────────
+  function checkEmpty() {
+    if (document.querySelectorAll('.favorite-item').length === 0) {
+      document.getElementById('empty-state').style.display  = 'flex';
+      document.getElementById('fav-header').style.display   = 'none';
+      document.getElementById('favorites-grid').style.display = 'none';
+    }
+  }
+</script>
+
+</body>
+</html>

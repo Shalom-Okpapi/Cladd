@@ -1,0 +1,346 @@
+<!--
+  ============================================================
+  CLADD — home_page.html
+  Rebranded from Pouchify. Luxury white spacing. Poppins.
+  ============================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Cladd</title>
+  <meta name="description" content="Cladd — the world's first snap-fit power bank pouch. Browse original designs by independent artists. Built to protect.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home_page.css">
+  <link rel="icon" href="img.png" type="image/x-icon">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JSLB5BF9QH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-JSLB5BF9QH');
+  </script>
+</head>
+<body>
+
+<header>
+  <button id="hamburger" onclick="toggleSidebar()">
+    <span></span><span></span><span></span>
+  </button>
+
+  <aside id="sidebar" class="closed">
+    <ul>
+      <a href="#"><li><div class="img_div"><img src="all.jpg" alt="Power Bank Pouches"></div>Power Bank Pouches</li></a>
+      <a href="#"><li><div class="img_div"><img src="t1.jpg" alt="Phone Pouches"></div>Phone Pouches</li></a>
+      <a href="#"><li><div class="img_div"><img src="itel.jpg" alt="Tablet Pouches"></div>Tablet Pouches</li></a>
+      <a href="#"><li><div class="img_div"><img src="ank.jpg" alt="Accessories"></div>Accessories</li></a>
+      <a href="#"><li><div class="img_div"><img src="haw.jpg" alt="Refer & Earn"></div>Refer &amp; Earn</li></a>
+    </ul>
+    <div class="centers">
+      <ul>
+        <a href="return_center.html"><li>Return Center</li></a>
+        <a href="help_center_page.html"><li>Help Center</li></a>
+        <a href="device_help.html"><li>Can't find my model</li></a>
+      </ul>
+    </div>
+    <div class="profile_link">
+      <a href="how_it_works_page.html">
+        <div class="img_div"><img src="artist.jpg" alt="Profile"></div>
+        <h1>Username / Shop</h1>
+      </a>
+    </div>
+  </aside>
+
+  <div class="right">
+    <div class="icon_links">
+      <a href="favorites_page.html" aria-label="Favorites"><i class="fa-regular fa-heart"></i></a>
+      <a href="shopping_cart_page.html" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+    </div>
+    <a href="home_page.html" class="brand-lockup">
+      <!-- Logo image — replace src with real logo file when ready -->
+      <img src="img.png" alt="Cladd logo" class="brand-logo">
+      <h1>Cladd</h1>
+    </a>
+  </div>
+
+  <div class="search_form_container">
+    <form method="post">
+      <input type="text" placeholder="Search themes, products,...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+</header>
+
+
+<!-- Hero -->
+<section class="hero-section">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Art. Protection. Expression.</p>
+    <h1 class="hero-title">Unique &amp; Weirdly<br>Meaningful Art</h1>
+    <p class="hero-text">Original designs on protective pouches. Built for the bold.</p>
+    <div class="hero-cta">
+      <a href="shop_haven.html" class="cta-btn">Power Bank Pouches</a>
+      <a href="shop_haven.html" class="cta-btn">Phone Pouches</a>
+      <a href="shop_haven.html" class="cta-btn">Accessories</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Shop by Brand -->
+<section class="second_section">
+  <p class="section-eyebrow">Compatible with</p>
+  <h1>Shop by Brand</h1>
+  <div class="container">
+    <div class="item"><a href="#"><img src="ank.jpg" alt="Anker"></a></div>
+    <div class="item"><a href="#"><img src="ora.jpg" alt="Oraimo"></a></div>
+    <div class="item"><a href="#"><img src="itel.jpg" alt="Itel"></a></div>
+    <div class="item"><a href="#"><img src="haw.jpg" alt="Haway"></a></div>
+    <div class="item"><a href="#"><img src="ora.jpg" alt="Oraimo"></a></div>
+    <div class="item"><a href="#"><img src="itel.jpg" alt="Itel"></a></div>
+    <div class="item"><a href="#"><img src="ank.jpg" alt="Anker"></a></div>
+  </div>
+</section>
+
+
+<!-- Product Range -->
+<section class="third_section">
+  <p class="section-eyebrow">What we protect</p>
+  <h1>Product Range</h1>
+  <div class="container">
+    <div class="item">
+      <a href="shop_haven.html"><img src="t3.jpg" alt="Power Bank Pouches"></a>
+      <a href="shop_haven.html"><button>Power Bank Pouches</button></a>
+    </div>
+    <div class="item">
+      <a href="shop_haven.html"><img src="t1.jpg" alt="Phone Pouches"></a>
+      <a href="shop_haven.html"><button>Phone Pouches</button></a>
+    </div>
+    <div class="item">
+      <a href="shop_haven.html"><img src="all.jpg" alt="Accessories"></a>
+      <a href="shop_haven.html"><button>Accessories</button></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Trending -->
+<section class="fourth_section">
+  <p class="section-eyebrow">What's hot right now</p>
+  <h1>Trending</h1>
+  <div class="container">
+    <div class="item"><a href="#"><img src="t1.jpg" alt="design"></a></div>
+    <div class="item"><a href="#"><img src="t2.jpg" alt="design"></a></div>
+    <div class="item"><a href="#"><img src="t3.jpg" alt="design"></a></div>
+    <div class="item"><a href="#"><img src="all.jpg" alt="design"></a></div>
+    <div class="item"><a href="#"><img src="powerPP.jpg" alt="design"></a></div>
+    <div class="item"><a href="#"><img src="t3.jpg" alt="design"></a></div>
+    <div class="item"><a href="#"><img src="t1.jpg" alt="design"></a></div>
+    <div class="item"><a href="#"><img src="ppb.jpg" alt="design"></a></div>
+    <div class="item"><a href="#"><img src="all.jpg" alt="design"></a></div>
+    <div class="item"><a href="#"><img src="t3.jpg" alt="design"></a></div>
+  </div>
+</section>
+
+
+<!-- Glow Feature -->
+<section class="fith_section">
+  <div class="container">
+    <p class="section-eyebrow fith-eyebrow">Limited collection</p>
+    <h1>Glow In The Dark<br>Power Bank Pouches</h1>
+    <p>Amazing designs that come alive in the dark.</p>
+    <a href="shop_haven.html">Shop Now</a>
+  </div>
+</section>
+
+
+<!-- Featured Artists -->
+<section class="sixth_section">
+  <p class="section-eyebrow">The people behind the art</p>
+  <h1>Featured Artists</h1>
+  <div class="container">
+
+    <div class="item">
+      <div class="banner-image"><img src="artist2.jpg" alt="artbysharon"></div>
+      <div class="artist-info">
+        <div class="profile-pic"><img src="artist2.jpg" alt="artbysharon"></div>
+        <p class="artist-name">artbysharon</p>
+        <a href="#" class="a_link">View Shop</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="banner-image"><img src="artist.jpg" alt="artbyshalom"></div>
+      <div class="artist-info">
+        <div class="profile-pic"><img src="artist.jpg" alt="artbyshalom"></div>
+        <p class="artist-name">artbyshalom</p>
+        <a href="#" class="a_link">View Shop</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="banner-image"><img src="artist2.jpg" alt="artist_3"></div>
+      <div class="artist-info">
+        <div class="profile-pic"><img src="artist2.jpg" alt="artist_3"></div>
+        <p class="artist-name">artist_3</p>
+        <a href="#" class="a_link">View Shop</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="banner-image"><img src="artist.jpg" alt="artist_4"></div>
+      <div class="artist-info">
+        <div class="profile-pic"><img src="artist.jpg" alt="artist_4"></div>
+        <p class="artist-name">artist_4</p>
+        <a href="#" class="a_link">View Shop</a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="banner-image"><img src="artist2.jpg" alt="artist_5"></div>
+      <div class="artist-info">
+        <div class="profile-pic"><img src="artist2.jpg" alt="artist_5"></div>
+        <p class="artist-name">artist_5</p>
+        <a href="#" class="a_link">View Shop</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Trust Bar -->
+<section class="seventh_section">
+  <div class="container">
+    <div class="item">
+      <img src="world.png" alt="Worldwide Shipping">
+      <p>Worldwide Shipping</p>
+    </div>
+    <div class="item">
+      <img src="limt.png" alt="Limited Warranty">
+      <p>Limited Warranty</p>
+    </div>
+    <div class="item">
+      <img src="secured.png" alt="Secured Payments">
+      <p>Secured Payments</p>
+    </div>
+    <div class="item">
+      <img src="local.png" alt="Local Support">
+      <p>Local Support</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-column">
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="shop_haven.html">Power Bank Pouches</a></li>
+        <li><a href="shop_haven.html">Stickers</a></li>
+        <li><a href="shop_haven.html">Phone Pouches</a></li>
+        <li><a href="shop_haven.html">Tablet Pouches</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Sell</h3>
+      <ul>
+        <li><a href="landing_page.html">Become an Artist</a></li>
+        <li><a href="design_tips.html">Design Tips</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="about_page.html">Our Story</a></li>
+        <li><a href="affiliate_page.html">Refer &amp; Earn</a></li>
+        <li><a href="home_page.html">Careers</a></li>
+        <li><a href="discounts_and_promotions.html">Coupons</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="help_center_page.html">Help Center</a></li>
+        <li><a href="contact_page.html">Contact Us</a></li>
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">User Agreements</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-title">Socials</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="subscribe_div">
+    <h2>Newsletter &amp; Special Offers</h2>
+    <form method="post">
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <div class="copyright">
+    &copy; 2025 Cladd. All rights reserved. Built to protect.
+  </div>
+</footer>
+
+
+<script src="script.js"></script>
+<script>
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('active');
+    document.getElementById('hamburger').classList.toggle('close');
+  }
+
+  document.addEventListener('click', function (e) {
+    const sidebar   = document.getElementById('sidebar');
+    const hamburger = document.getElementById('hamburger');
+    if (sidebar.classList.contains('active') &&
+        !sidebar.contains(e.target) &&
+        !hamburger.contains(e.target)) {
+      sidebar.classList.remove('active');
+      hamburger.classList.remove('close');
+    }
+  });
+
+  // Scroll reveal on sections
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity   = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll(
+    '.second_section, .third_section, .sixth_section, .seventh_section'
+  ).forEach(el => {
+    el.style.opacity    = '0';
+    el.style.transform  = 'translateY(28px)';
+    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!--
+  ============================================================
+  CLADD — landing_page.html
+  Artist acquisition page. Identity-first copy.
+  New header standard: FA icons, brand lockup.
+  ============================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Become an Artist | Cladd</title>
+  <meta name="description" content="Your art deserves to live in the real world. Join Cladd — a marketplace where independent artists sell original designs on snap-fit power bank pouches.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="landing_page.css">
+  <link rel="icon" href="img.png" type="image/x-icon">
+</head>
+<body>
+
+<header>
+  <button id="hamburger" onclick="toggleSidebar()">
+    <span></span><span></span><span></span>
+  </button>
+
+  <aside id="sidebar" class="closed">
+    <ul>
+      <a href="#"><li><div class="img_div"><img src="all.jpg" alt="Power Bank Pouches"></div>Power Bank Pouches</li></a>
+      <a href="#"><li><div class="img_div"><img src="t1.jpg" alt="Phone Pouches"></div>Phone Pouches</li></a>
+      <a href="#"><li><div class="img_div"><img src="ank.jpg" alt="Accessories"></div>Accessories</li></a>
+      <a href="#"><li><div class="img_div"><img src="itel.jpg" alt="Coupons"></div>Coupons</li></a>
+      <a href="#"><li><div class="img_div"><img src="haw.jpg" alt="Refer & Earn"></div>Refer &amp; Earn</li></a>
+    </ul>
+    <div class="centers">
+      <ul>
+        <a href="return_center.html"><li>Return Center</li></a>
+        <a href="help_center_page.html"><li>Help Center</li></a>
+        <a href="device_help.html"><li>Can't find my model</li></a>
+      </ul>
+    </div>
+    <div class="profile_link">
+      <a href="how_it_works_page.html">
+        <div class="img_div"><img src="itel.jpg" alt="Profile"></div>
+        <h1>Username / Shop</h1>
+      </a>
+    </div>
+  </aside>
+
+  <div class="right">
+    <div class="icon_links">
+      <a href="favorites_page.html" aria-label="Favorites"><i class="fa-regular fa-heart"></i></a>
+      <a href="shopping_cart_page.html" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+    </div>
+    <a href="home_page.html" class="brand-lockup">
+      <img src="img.png" alt="Cladd logo" class="brand-logo">
+      <h1>Cladd</h1>
+    </a>
+  </div>
+
+  <div class="search_form_container">
+    <form method="post">
+      <input type="text" placeholder="Search themes, products,...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+</header>
+
+
+<main>
+
+  <!-- ── Hero ───────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="content">
+      <p class="eyebrow">For independent artists</p>
+      <h1>Your art belongs<br>in the real world.</h1>
+      <p>Not on a screen. Not in a gallery ten people visit.
+        On something someone carries every single day —
+        and chose specifically because it looked like them.
+        That's what Cladd makes possible.
+      </p>
+      <a href="index.html"><button>Start Selling</button></a>
+    </div>
+    <div class="img_container">
+      <img src="hero_img.png" alt="Cladd product">
+    </div>
+  </section>
+
+
+  <!-- ── How It Works ───────────────────────────────────── -->
+  <section class="how_it_works">
+    <p class="eyebrow">Simple by design</p>
+    <h1>How Cladd Works</h1>
+    <div class="steps">
+      <div class="step">
+        <img src="no_one.png" alt="Step 1">
+        <p>You upload your design to a product in your shop.</p>
+      </div>
+      <div class="step">
+        <img src="no_two.png" alt="Step 2">
+        <p>A customer finds it, connects with it, and orders it.</p>
+      </div>
+      <div class="step">
+        <img src="no_three.png" alt="Step 3">
+        <p>We produce and ship your design directly to them.</p>
+      </div>
+      <div class="step">
+        <img src="no_four.png" alt="Step 4">
+        <p>They carry something that feels like them. You get paid.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── Artists Section ────────────────────────────────── -->
+  <section class="artists">
+
+    <div class="artists-container">
+      <div class="artists-track">
+        <img src="artist.jpg"  alt="Artist">
+        <img src="artist2.jpg" alt="Artist">
+        <img src="artist.jpg"  alt="Artist">
+        <img src="artist2.jpg" alt="Artist">
+        <img src="artist.jpg"  alt="Artist">
+        <img src="artist2.jpg" alt="Artist">
+        <img src="artist.jpg"  alt="Artist">
+        <img src="artist2.jpg" alt="Artist">
+        <img src="artist.jpg"  alt="Artist">
+        <img src="artist2.jpg" alt="Artist">
+        <img src="artist.jpg"  alt="Artist">
+        <img src="artist2.jpg" alt="Artist">
+      </div>
+    </div>
+
+    <div class="artists-content">
+      <p class="eyebrow">The community</p>
+      <h1>Join artists who create<br>for people, not algorithms.</h1>
+      <p>Cladd isn't a feed. It's a marketplace.
+        Every person who buys your design chose it
+        because it said something they couldn't say on their own.
+        Your art becomes part of their identity.
+        That's a different kind of connection.
+      </p>
+      <a href="index.html"><button>Start Selling</button></a>
+    </div>
+
+  </section>
+
+
+  <!-- ── Tiers ──────────────────────────────────────────── -->
+  <section class="tiers">
+    <p class="eyebrow">Built for every stage</p>
+    <h1>Account Tiers</h1>
+    <div class="tiers_container">
+
+      <div class="tier">
+        <p class="tier-label">Basic</p>
+        <h2>Start free.<br>Start today.</h2>
+        <ul>
+          <li><i class="fas fa-check"></i> Your own shopfront</li>
+          <li><i class="fas fa-check"></i> Global shipping handled</li>
+          <li><i class="fas fa-check"></i> Verified artist ID</li>
+        </ul>
+      </div>
+
+      <div class="tier tier-premium">
+        <p class="tier-label premium">Premium</p>
+        <h2>Grow without<br>limits.</h2>
+        <ul>
+          <li><i class="fas fa-check"></i> Get featured on the homepage</li>
+          <li><i class="fas fa-check"></i> Full control over your pricing</li>
+          <li><i class="fas fa-check"></i> Dedicated artist support</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── Video Section ──────────────────────────────────── -->
+  <section class="video-section">
+    <div class="content">
+      <p class="eyebrow">The product</p>
+      <h1>Protect. Charge. Express.</h1>
+      <p>This is what your art goes on —
+        the world's first snap-fit power bank pouch.
+        360° protection. Built-in port access.
+        Carried by someone who chose your design
+        over everything else available.
+      </p>
+      <div class="videos">
+        <video controls loop>
+          <source src="pouchify vid.mp4" type="video/mp4">
+        </video>
+        <video controls loop>
+          <source src="phone case video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <a href="index.html"><button>Ready to Begin?</button></a>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-column">
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="shop_haven.html">Power Bank Pouches</a></li>
+        <li><a href="shop_haven.html">Stickers</a></li>
+        <li><a href="shop_haven.html">Phone Pouches</a></li>
+        <li><a href="shop_haven.html">Tablet Pouches</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Sell</h3>
+      <ul>
+        <li><a href="landing_page.html">Become an Artist</a></li>
+        <li><a href="design_tips.html">Design Tips</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="about_page.html">Our Story</a></li>
+        <li><a href="affiliate_page.html">Refer &amp; Earn</a></li>
+        <li><a href="home_page.html">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="help_center_page.html">Help Center</a></li>
+        <li><a href="contact_page.html">Contact Us</a></li>
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">User Agreements</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-title">Socials</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="subscribe_div">
+    <h2>Newsletter &amp; Special Offers</h2>
+    <form method="post">
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <div class="copyright">
+    &copy; 2025 Cladd. All rights reserved. Built to protect.
+  </div>
+</footer>
+
+
+<script>
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('active');
+    document.getElementById('hamburger').classList.toggle('close');
+  }
+
+  document.addEventListener('click', function (e) {
+    const sidebar   = document.getElementById('sidebar');
+    const hamburger = document.getElementById('hamburger');
+    if (sidebar.classList.contains('active') &&
+        !sidebar.contains(e.target) &&
+        !hamburger.contains(e.target)) {
+      sidebar.classList.remove('active');
+      hamburger.classList.remove('close');
+    }
+  });
+</script>
+
+</body>
+</html>

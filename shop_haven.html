@@ -1,0 +1,446 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Haven | Pouchify</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shop_haven.css">
+  <link rel="icon" href="img.png" type="image/x-icon">
+</head>
+<body>
+
+<header>
+  <button id="hamburger" onclick="toggleSidebar()">
+    <span></span><span></span><span></span>
+  </button>
+
+  <aside id="sidebar" class="closed">
+    <ul>
+      <a href="#"><li><div class="img_div"><img src="all.jpg" alt="Power Bank Pouches"></div>Power Bank Pouches</li></a>
+      <a href="#"><li><div class="img_div"><img src="t1.jpg" alt="Phone Pouches"></div>Phone Pouches</li></a>
+      <a href="#"><li><div class="img_div"><img src="ank.jpg" alt="Accessories"></div>Accessories</li></a>
+      <a href="#"><li><div class="img_div"><img src="itel.jpg" alt="Coupons"></div>Coupons</li></a>
+      <a href="#"><li><div class="img_div"><img src="haw.jpg" alt="Refer & Earn"></div>Refer &amp; Earn</li></a>
+    </ul>
+    <div class="centers">
+      <ul>
+        <a href="return_center.html"><li>Return Center</li></a>
+        <a href="help_center_page.html"><li>Help Center</li></a>
+        <a href="device_help.html"><li>Can't find my model</li></a>
+      </ul>
+    </div>
+    <div class="profile_link">
+      <a href="how_it_works_page.html">
+        <div class="img_div"><img src="itel.jpg" alt="Profile"></div>
+        <h1>Username / Shop</h1>
+      </a>
+    </div>
+  </aside>
+
+  <div class="right">
+    <div class="icon_links">
+      <a href="favorites_page.html" aria-label="Favorites"><i class="fa-regular fa-heart"></i></a>
+      <a href="shopping_cart_page.html" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+    </div>
+    <a href="home_page.html" class="brand-lockup">
+      <img src="img.png" alt="Cladd logo" class="brand-logo">
+      <h1>Cladd</h1>
+    </a>
+  </div>
+
+  <div class="search_form_container">
+    <form method="post">
+      <input type="text" placeholder="Search themes, products,...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+</header>
+
+
+<main>
+
+  <!-- ── Banner ── -->
+  <section class="banner">
+    <div class="banner-text">
+ 
+      <h2>Find designs that speak to you.</h2>
+      <p>Original art by independent creators, printed on quality pouches.</p>
+      <a href="#product-grid" class="banner-cta">Browse Collection</a>
+    </div>
+    <img src="t2.jpg" alt="Featured product" class="banner-img">
+  </section>
+
+
+  <!-- ── Sticky Filter Bar ── -->
+  <div class="filter-bar">
+    <div class="filter-pills">
+      <button class="pill active" data-value="all"         onclick="selectCategory(this)">All</button>
+      <button class="pill"        data-value="powerbank"   onclick="selectCategory(this)">Power Bank Pouches</button>
+      <button class="pill"        data-value="phone"       onclick="selectCategory(this)">Phone Pouches</button>
+      <button class="pill"        data-value="tablet"      onclick="selectCategory(this)">Tablet Pouches</button>
+      <button class="pill"        data-value="accessories" onclick="selectCategory(this)">Accessories</button>
+    </div>
+    <span class="filter-count" id="product-count">9 products</span>
+  </div>
+
+
+  <!-- ── Product Grid ── -->
+  <section class="products-section" id="product-grid">
+    <div class="products-grid">
+
+      <!-- Card 1 -->
+      <div class="product-card" data-category="powerbank">
+        <div class="card-image-wrap">
+          <img src="t1.jpg" alt="Cosmic Cat Astronaut">
+          <div class="card-overlay">
+            <button class="overlay-btn">
+              <i class="fas fa-shopping-bag"></i> Add to Cart
+            </button>
+          </div>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <span class="card-badge">New</span>
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <p class="card-title">Cosmic Cat Astronaut</p>
+            <p class="card-artist">by SpaceArtist</p>
+          </div>
+          <p class="card-price">$24.50</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="product-card" data-category="powerbank">
+        <div class="card-image-wrap">
+          <img src="t2.jpg" alt="Retro Sunset Waves">
+          <div class="card-overlay">
+            <button class="overlay-btn">
+              <i class="fas fa-shopping-bag"></i> Add to Cart
+            </button>
+          </div>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <span class="card-badge sale">Sale</span>
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <p class="card-title">Retro Sunset Waves</p>
+            <p class="card-artist">by VintageDreamer</p>
+          </div>
+          <p class="card-price">$19.99</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="product-card" data-category="phone">
+        <div class="card-image-wrap">
+          <img src="t1.jpg" alt="Neon Jungle">
+          <div class="card-overlay">
+            <button class="overlay-btn">
+              <i class="fas fa-shopping-bag"></i> Add to Cart
+            </button>
+          </div>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <p class="card-title">Neon Jungle</p>
+            <p class="card-artist">by WildInk</p>
+          </div>
+          <p class="card-price">$21.00</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="product-card" data-category="phone">
+        <div class="card-image-wrap">
+          <img src="t2.jpg" alt="Abstract Storm">
+          <div class="card-overlay">
+            <button class="overlay-btn">
+              <i class="fas fa-shopping-bag"></i> Add to Cart
+            </button>
+          </div>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <span class="card-badge sale">Sale</span>
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <p class="card-title">Abstract Storm</p>
+            <p class="card-artist">by CloudBrush</p>
+          </div>
+          <p class="card-price">$18.50</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="product-card" data-category="powerbank">
+        <div class="card-image-wrap">
+          <img src="t3.jpg" alt="Golden Hour">
+          <div class="card-overlay">
+            <button class="overlay-btn">
+              <i class="fas fa-shopping-bag"></i> Add to Cart
+            </button>
+          </div>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <span class="card-badge">New</span>
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <p class="card-title">Golden Hour</p>
+            <p class="card-artist">by SunsetStudio</p>
+          </div>
+          <p class="card-price">$26.00</p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="product-card" data-category="tablet">
+        <div class="card-image-wrap">
+          <img src="all.jpg" alt="Minimal Grid">
+          <div class="card-overlay">
+            <button class="overlay-btn">
+              <i class="fas fa-shopping-bag"></i> Add to Cart
+            </button>
+          </div>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <p class="card-title">Minimal Grid</p>
+            <p class="card-artist">by CleanLines</p>
+          </div>
+          <p class="card-price">$22.00</p>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="product-card" data-category="accessories">
+        <div class="card-image-wrap">
+          <img src="t1.jpg" alt="Pixel Dreams">
+          <div class="card-overlay">
+            <button class="overlay-btn">
+              <i class="fas fa-shopping-bag"></i> Add to Cart
+            </button>
+          </div>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <span class="card-badge">New</span>
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <p class="card-title">Pixel Dreams</p>
+            <p class="card-artist">by RetroBytes</p>
+          </div>
+          <p class="card-price">$17.99</p>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="product-card" data-category="tablet">
+        <div class="card-image-wrap">
+          <img src="t2.jpg" alt="Urban Sprawl">
+          <div class="card-overlay">
+            <button class="overlay-btn">
+              <i class="fas fa-shopping-bag"></i> Add to Cart
+            </button>
+          </div>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <p class="card-title">Urban Sprawl</p>
+            <p class="card-artist">by CityCanvas</p>
+          </div>
+          <p class="card-price">$23.50</p>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="product-card" data-category="accessories">
+        <div class="card-image-wrap">
+          <img src="t3.jpg" alt="Ink Flow">
+          <div class="card-overlay">
+            <button class="overlay-btn">
+              <i class="fas fa-shopping-bag"></i> Add to Cart
+            </button>
+          </div>
+          <button class="wishlist-btn" onclick="toggleWishlist(this)">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <span class="card-badge sale">Sale</span>
+        </div>
+        <div class="card-info">
+          <div class="card-meta">
+            <p class="card-title">Ink Flow</p>
+            <p class="card-artist">by FluidArt</p>
+          </div>
+          <p class="card-price">$16.00</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Empty state -->
+    <div class="no-results" id="no-results" style="display:none;">
+      <i class="fas fa-search"></i>
+      <p>No products in this category yet.</p>
+      <button class="pill active" onclick="resetFilter()">Show All</button>
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="shop_haven.html">Power Bank Pouches</a></li>
+        <li><a href="shop_haven.html">Stickers</a></li>
+        <li><a href="shop_haven.html">Phone Pouches</a></li>
+        <li><a href="shop_haven.html">Tablet Pouches</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Sell</h3>
+      <ul>
+        <li><a href="landing_page.html">Become an Artist</a></li>
+        <li><a href="design_tips.html">Design Tips</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="about_page.html">Our Story</a></li>
+        <li><a href="affiliate_page.html">Refer &amp; Earn</a></li>
+        <li><a href="home_page.html">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="help_center_page.html">Help Center</a></li>
+        <li><a href="contact_page.html">Contact Us</a></li>
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">User Agreements</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3 class="footer-title">Socials</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="subscribe_div">
+    <h2>NEWSLETTER &amp; SPECIAL OFFERS</h2>
+    <form method="post">
+      <input type="email" placeholder="Enter email address">
+      <button>Subscribe</button>
+    </form>
+  </div>
+  <div class="copyright">&copy;Pouchify. All Rights Reserved</div>
+</footer>
+
+
+<script>
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('active');
+    document.getElementById('hamburger').classList.toggle('close');
+  }
+
+  document.addEventListener('click', function (e) {
+    const sidebar = document.getElementById('sidebar');
+    const hamburger = document.getElementById('hamburger');
+    if (sidebar.classList.contains('active') &&
+        !sidebar.contains(e.target) &&
+        !hamburger.contains(e.target)) {
+      sidebar.classList.remove('active');
+      hamburger.classList.remove('close');
+    }
+  });
+
+  function selectCategory(btn) {
+    document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+
+    const value = btn.getAttribute('data-value');
+    const cards = document.querySelectorAll('.product-card');
+    let visible = 0;
+
+    cards.forEach((card, i) => {
+      const match = value === 'all' || card.getAttribute('data-category') === value;
+      if (match) {
+        card.style.display = 'block';
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(16px)';
+        setTimeout(() => {
+          card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, i * 50);
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    document.getElementById('product-count').textContent =
+      visible === 1 ? '1 product' : `${visible} products`;
+    document.getElementById('no-results').style.display =
+      visible === 0 ? 'flex' : 'none';
+  }
+
+  function resetFilter() {
+    selectCategory(document.querySelector('.pill[data-value="all"]'));
+  }
+
+  function toggleWishlist(btn) {
+    const icon = btn.querySelector('i');
+    const isActive = icon.classList.contains('fa-solid');
+    icon.classList.toggle('fa-solid', !isActive);
+    icon.classList.toggle('fa-regular', isActive);
+    btn.classList.toggle('wishlisted', !isActive);
+    btn.style.transform = 'scale(1.5)';
+    setTimeout(() => { btn.style.transform = 'scale(1)'; }, 200);
+  }
+
+  // Staggered entrance on load
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.product-card').forEach((card, i) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(24px)';
+      setTimeout(() => {
+        card.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, i * 80);
+    });
+  });
+</script>
+
+</body>
+</html>

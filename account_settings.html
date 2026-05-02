@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Settings | Cladd</title>
+  <meta name="description" content="Manage your Cladd account - email, password, notifications, privacy, and more.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="img.png" type="image/x-icon">
+  <style>
+
+    .settings-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid #e5e7eb;
+      flex-wrap: wrap;
+    }
+
+    .settings-row:last-child { border-bottom: none; }
+
+    .settings-row-info { flex: 1; min-width: 200px; }
+
+    .settings-row-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #07101b;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .settings-row-value {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    .settings-btn {
+      padding: 8px 20px;
+      background: #f9fafb;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #07101b;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .settings-btn:hover {
+      background: #07101b;
+      color: white;
+      border-color: #07101b;
+    }
+
+    .settings-btn.danger {
+      border-color: #fecaca;
+      color: #dc2626;
+      background: #fef2f2;
+    }
+
+    .settings-btn.danger:hover {
+      background: #dc2626;
+      color: white;
+      border-color: #dc2626;
+    }
+
+    .toggle {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
+
+    .toggle-track {
+      position: absolute;
+      inset: 0;
+      background: #e5e7eb;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .toggle input:checked + .toggle-track { background: #007acc; }
+
+    .toggle-thumb {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 18px;
+      height: 18px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease;
+      pointer-events: none;
+    }
+
+    .toggle input:checked ~ .toggle-thumb { transform: translateX(20px); }
+
+    .toggle-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toggle-label { font-size: 0.78rem; color: #6b7280; }
+
+    .danger-zone {
+      border: 1.5px solid #fecaca;
+      border-radius: 12px;
+      padding: 24px;
+      background: #fff;
+      margin-top: 8px;
+    }
+
+    .danger-zone h3 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #dc2626;
+      margin-bottom: 8px;
+    }
+
+    .danger-zone p {
+      font-size: 0.82rem;
+      color: #6b7280;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .inline-form {
+      display: none;
+      padding: 16px 0 8px;
+    }
+
+    .action-btn {
+      padding: 9px 22px;
+      background: #07101b;
+      color: white;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.2s ease;
+    }
+
+    .action-btn:hover { background: #007acc; }
+
+  </style>
+</head>
+<body>
+
+<header class="article-header">
+  <a href="home_page.html" class="brand-lockup">
+    <img src="img.png" alt="Cladd logo" class="brand-logo">
+    <h1>Cladd</h1>
+  </a>
+  <nav class="article-header-nav">
+    <a href="home_page.html">Home</a>
+    <a href="edit_profile.html">Edit Profile</a>
+    <a href="help_center_page.html">Help</a>
+    <a href="contact_page.html">Contact</a>
+  </nav>
+  <div class="article-header-icons">
+    <a href="favorites_page.html" aria-label="Favorites"><i class="fa-regular fa-heart"></i></a>
+    <a href="shopping_cart_page.html" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+  </div>
+</header>
+
+<div class="article-hero">
+  <span class="eyebrow">Manage Your Account</span>
+  <h1>Account Settings</h1>
+  <p>Control your email, password, notifications, privacy, and payout details.</p>
+</div>
+
+<nav class="breadcrumb">
+  <a href="home_page.html">Home</a>
+  <span class="sep">›</span>
+  <span class="current">Account Settings</span>
+</nav>
+
+<div class="article-layout">
+
+  <aside class="article-sidebar">
+    <div class="sidebar-section">
+      <h3>On This Page</h3>
+      <ul>
+        <li><a href="#account" class="active">Account</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#notifications">Notifications</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li id="sidebar-payouts" style="display:none;"><a href="#payouts">Payouts</a></li>
+        <li><a href="#danger">Danger Zone</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <h3>Related</h3>
+      <ul>
+        <li><a href="edit_profile.html">Edit Profile</a></li>
+        <li><a href="recovery_page.html">Reset Password</a></li>
+        <li><a href="account_help.html">Account Help</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="article-content">
+
+    <!-- Account -->
+    <div class="article-section" id="account">
+      <span class="eyebrow">Your Details</span>
+      <h2>Account</h2>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Email Address</span>
+          <span class="settings-row-value">your@email.com</span>
+        </div>
+        <button class="settings-btn" onclick="toggleInline('email-form')">Change Email</button>
+      </div>
+
+      <div class="inline-form" id="email-form">
+        <div class="contact-form" style="max-width:400px;">
+          <div class="form-group">
+            <label for="new-email">New Email Address</label>
+            <input type="email" id="new-email" placeholder="Enter new email">
+          </div>
+          <div class="form-group">
+            <label for="email-password">Confirm Password</label>
+            <input type="password" id="email-password" placeholder="Your current password">
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="settings-btn" onclick="toggleInline('email-form')">Cancel</button>
+            <button class="action-btn">Save Email</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Username</span>
+          <span class="settings-row-value">@yourusername</span>
+        </div>
+        <a href="edit_profile.html#basic">
+          <button class="settings-btn">Change Username</button>
+        </a>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Account Type</span>
+          <span class="settings-row-value" id="account-type-label">Shopper</span>
+        </div>
+        <a href="contact_page.html">
+          <button class="settings-btn">Request Change</button>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Security -->
+    <div class="article-section" id="security">
+      <span class="eyebrow">Stay Protected</span>
+      <h2>Security</h2>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Password</span>
+          <span class="settings-row-value">Last changed: never</span>
+        </div>
+        <a href="recovery_page.html">
+          <button class="settings-btn">Change Password</button>
+        </a>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Active Sessions</span>
+          <span class="settings-row-value">Sign out all other devices</span>
+        </div>
+        <button class="settings-btn" onclick="alert('All other sessions have been signed out.')">Sign Out All</button>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Login History</span>
+          <span class="settings-row-value">View recent account access</span>
+        </div>
+        <button class="settings-btn">View History</button>
+      </div>
+
+      <div class="article-box warning" style="margin-top:20px;">
+        <p>If you notice activity you do not recognise, change your password immediately and <a href="contact_page.html">contact us.</a></p>
+      </div>
+    </div>
+
+    <!-- Notifications -->
+    <div class="article-section" id="notifications">
+      <span class="eyebrow">What You Hear About</span>
+      <h2>Notifications</h2>
+      <p>Choose which emails Cladd sends you. Order confirmation emails cannot be turned off.</p>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Order Updates</span>
+          <span class="settings-row-value">Shipping and delivery notifications</span>
+        </div>
+        <div class="toggle-wrap">
+          <label class="toggle">
+            <input type="checkbox" checked disabled>
+            <span class="toggle-track"></span>
+            <span class="toggle-thumb"></span>
+          </label>
+          <span class="toggle-label">Required</span>
+        </div>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Marketing Emails</span>
+          <span class="settings-row-value">Promotions, new collections, discount codes</span>
+        </div>
+        <div class="toggle-wrap">
+          <label class="toggle">
+            <input type="checkbox" id="toggle-marketing" checked>
+            <span class="toggle-track"></span>
+            <span class="toggle-thumb"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Artist Alerts</span>
+          <span class="settings-row-value">New designs from artists you follow</span>
+        </div>
+        <div class="toggle-wrap">
+          <label class="toggle">
+            <input type="checkbox" id="toggle-artists" checked>
+            <span class="toggle-track"></span>
+            <span class="toggle-thumb"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Sales and Design Updates</span>
+          <span class="settings-row-value">Earnings and design review outcomes (creators only)</span>
+        </div>
+        <div class="toggle-wrap">
+          <label class="toggle">
+            <input type="checkbox" id="toggle-sales" checked>
+            <span class="toggle-track"></span>
+            <span class="toggle-thumb"></span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Privacy -->
+    <div class="article-section" id="privacy">
+      <span class="eyebrow">Your Data</span>
+      <h2>Privacy</h2>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Shop Visibility</span>
+          <span class="settings-row-value">Control whether your shop appears in public listings</span>
+        </div>
+        <div class="toggle-wrap">
+          <label class="toggle">
+            <input type="checkbox" id="toggle-visibility" checked>
+            <span class="toggle-track"></span>
+            <span class="toggle-thumb"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Data Export</span>
+          <span class="settings-row-value">Download a copy of all data Cladd holds about you</span>
+        </div>
+        <button class="settings-btn" onclick="requestExport()">Request Export</button>
+      </div>
+
+      <div class="inline-form" id="export-msg">
+        <div class="article-box success">
+          <p>Your data export has been requested. We will email it to you within 30 days.</p>
+        </div>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Cookie Preferences</span>
+          <span class="settings-row-value">Manage analytics and preference cookies</span>
+        </div>
+        <a href="legal.html">
+          <button class="settings-btn">Manage Cookies</button>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Payouts — creators only -->
+    <div class="article-section" id="payouts" style="display:none;">
+      <span class="eyebrow">Getting Paid</span>
+      <h2>Payout Settings</h2>
+      <p>Manage your withdrawal method and track your earnings.</p>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Payout Method</span>
+          <span class="settings-row-value">Not set up yet</span>
+        </div>
+        <button class="settings-btn">Add Method</button>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Wallet Balance</span>
+          <span class="settings-row-value">$0.00</span>
+        </div>
+        <button class="settings-btn">Withdraw</button>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Payout History</span>
+          <span class="settings-row-value">View previous withdrawals</span>
+        </div>
+        <button class="settings-btn">View History</button>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-info">
+          <span class="settings-row-label">Gift Cards</span>
+          <span class="settings-row-value">View and manage your gift card balances</span>
+        </div>
+        <a href="gift_cards.html">
+          <button class="settings-btn">View Gift Cards</button>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Danger Zone -->
+    <div class="article-section" id="danger">
+      <span class="eyebrow">Irreversible Actions</span>
+      <h2>Danger Zone</h2>
+
+      <div class="danger-zone">
+        <h3><i class="fas fa-exclamation-triangle" style="margin-right:6px;"></i>Close Account</h3>
+        <p>
+          Closing your account is permanent. Your profile, designs, and data will be deleted
+          within 90 days. Pending orders will still be fulfilled. Artist earnings will be paid
+          out before closure. This cannot be undone.
+        </p>
+        <button class="settings-btn danger" onclick="confirmClose()">Close My Account</button>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="shop_haven.html">Power Bank Pouches</a></li>
+        <li><a href="shop_haven.html">Phone Pouches</a></li>
+        <li><a href="shop_haven.html">Stickers</a></li>
+        <li><a href="shop_haven.html">Tablet Pouches</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Sell</h3>
+      <ul>
+        <li><a href="landing_page.html">Become an Artist</a></li>
+        <li><a href="design_tips.html">Design Tips</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="about_page.html">Our Story</a></li>
+        <li><a href="affiliate_page.html">Refer &amp; Earn</a></li>
+        <li><a href="home_page.html">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="help_center_page.html">Help Center</a></li>
+        <li><a href="contact_page.html">Contact Us</a></li>
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">User Agreements</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Socials</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="subscribe_div">
+    <h2>Newsletter &amp; Special Offers</h2>
+    <form method="post">
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <div class="copyright">&copy; 2025 Cladd. All rights reserved. Built to protect.</div>
+</footer>
+
+<script>
+
+  // Show creator-only sections
+  document.addEventListener('DOMContentLoaded', function () {
+    var type = localStorage.getItem('cladd_account_type');
+    if (type === 'artist') {
+      document.getElementById('payouts').style.display = 'block';
+      document.getElementById('sidebar-payouts').style.display = 'block';
+      document.getElementById('account-type-label').textContent = 'Creator';
+    }
+  });
+
+  // Toggle inline form visibility
+  function toggleInline(id) {
+    var el = document.getElementById(id);
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+  }
+
+  // Data export request
+  function requestExport() {
+    document.getElementById('export-msg').style.display = 'block';
+  }
+
+  // Close account confirmation
+  function confirmClose() {
+    var ok = confirm('Are you sure you want to close your account? This cannot be undone.');
+    if (ok) {
+      window.location.href = 'contact_page.html';
+    }
+  }
+
+</script>
+
+</body>
+</html>

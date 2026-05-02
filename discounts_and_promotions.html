@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discounts &amp; Promotions | Cladd</title>
+  <meta name="description" content="Coupon codes, seasonal sales, referral rewards — all the ways to save on Cladd.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="img.png" type="image/x-icon">
+  <style>
+    .promo-grid { display:flex; flex-direction:column; gap:12px; margin-top:24px; }
+
+    .promo-card {
+      display:flex; align-items:center; gap:16px;
+      padding:18px 20px; border-radius:12px;
+      border:1px solid #e5e7eb; background:#fff;
+      transition: box-shadow 0.2s ease;
+    }
+    .promo-card:hover { box-shadow:0 4px 16px rgba(0,0,0,0.06); }
+
+    .promo-icon {
+      width:44px; height:44px; border-radius:10px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1rem; flex-shrink:0;
+    }
+
+    .promo-title { font-size:0.88rem; font-weight:700; color:#07101b; margin-bottom:3px !important; }
+    .promo-card p:last-child { font-size:0.8rem; color:#6b7280; line-height:1.6; margin:0 !important; }
+    .promo-card a { color:#007acc; }
+
+    .coupon-demo {
+      display:inline-flex; align-items:center; gap:12px;
+      background:#f9fafb; border:1.5px dashed #e5e7eb;
+      border-radius:10px; padding:14px 20px; margin:8px 0;
+      cursor:pointer; transition:border-color 0.2s ease;
+      width:100%; max-width:420px;
+    }
+    .coupon-demo:hover { border-color:#007acc; }
+
+    .coupon-code { font-size:1rem; font-weight:800; letter-spacing:2px; color:#07101b; }
+    .coupon-copy { font-size:0.72rem; font-weight:600; color:#007acc; letter-spacing:0.5px; }
+    .coupon-copied { color:#22c55e !important; }
+  </style>
+</head>
+<body>
+
+<header class="article-header">
+  <a href="home_page.html" class="brand-lockup">
+    <img src="img.png" alt="Cladd logo" class="brand-logo">
+    <h1>Cladd</h1>
+  </a>
+  <nav class="article-header-nav">
+    <a href="home_page.html">Home</a>
+    <a href="shop_haven.html">Shop</a>
+    <a href="help_center_page.html">Help Center</a>
+    <a href="contact_page.html">Contact</a>
+  </nav>
+  <div class="article-header-icons">
+    <a href="favorites_page.html" aria-label="Favorites"><i class="fa-regular fa-heart"></i></a>
+    <a href="shopping_cart_page.html" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+  </div>
+</header>
+
+<div class="article-hero">
+  <span class="eyebrow">Save More</span>
+  <h1>Discounts &amp; Promotions</h1>
+  <p>Coupon codes, seasonal sales, referral rewards — all the ways to pay less on Cladd.</p>
+</div>
+
+<nav class="breadcrumb">
+  <a href="home_page.html">Home</a>
+  <span class="sep">›</span>
+  <a href="help_center_page.html">Help Center</a>
+  <span class="sep">›</span>
+  <span class="current">Discounts &amp; Promotions</span>
+</nav>
+
+<div class="article-layout">
+
+  <aside class="article-sidebar">
+    <div class="sidebar-section">
+      <h3>On This Page</h3>
+      <ul>
+        <li><a href="#types" class="active">Types of Discounts</a></li>
+        <li><a href="#active">Active Codes</a></li>
+        <li><a href="#how-to">How to Apply</a></li>
+        <li><a href="#rules">Coupon Rules</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <h3>Related</h3>
+      <ul>
+        <li><a href="gift_cards.html">Gift Cards</a></li>
+        <li><a href="affiliate_page.html">Refer &amp; Earn</a></li>
+        <li><a href="payment_options.html">Payment Options</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="article-content">
+
+    <!-- Types -->
+    <div class="article-section" id="types">
+      <span class="eyebrow">Ways to Save</span>
+      <h2>Types of Discounts</h2>
+      <p>Cladd offers several ways to reduce what you pay. Here's a breakdown of every discount type available.</p>
+
+      <div class="promo-grid">
+
+        <div class="promo-card">
+          <div class="promo-icon" style="background:#eff6ff; color:#1d4ed8;">
+            <i class="fas fa-tag"></i>
+          </div>
+          <div>
+            <p class="promo-title">Coupon Codes</p>
+            <p>Percentage or flat-amount codes entered at checkout. Found in our newsletter, on social media, and on this page.</p>
+          </div>
+        </div>
+
+        <div class="promo-card">
+          <div class="promo-icon" style="background:#ecfdf5; color:#065f46;">
+            <i class="fas fa-user-plus"></i>
+          </div>
+          <div>
+            <p class="promo-title">Welcome Discount</p>
+            <p>New to Cladd? Get 10% off your first order automatically when you sign up. Applied at checkout — no code needed.</p>
+          </div>
+        </div>
+
+        <div class="promo-card">
+          <div class="promo-icon" style="background:#fef3c7; color:#92400e;">
+            <i class="fas fa-share-alt"></i>
+          </div>
+          <div>
+            <p class="promo-title">Referral Rewards</p>
+            <p>Refer a friend and earn $2 every time they make a qualifying purchase. <a href="affiliate_page.html">Learn more about Refer &amp; Earn.</a></p>
+          </div>
+        </div>
+
+        <div class="promo-card">
+          <div class="promo-icon" style="background:#f3e8ff; color:#6b21a8;">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <div>
+            <p class="promo-title">Seasonal Sales</p>
+            <p>We run sales during major periods — Black Friday, New Year, and other key dates. Subscribe to our newsletter to be first to know.</p>
+          </div>
+        </div>
+
+        <div class="promo-card">
+          <div class="promo-icon" style="background:#fff7ed; color:#c2410c;">
+            <i class="fas fa-truck"></i>
+          </div>
+          <div>
+            <p class="promo-title">Free Shipping</p>
+            <p>All domestic orders over $60 qualify for free standard shipping automatically. No code required.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Active Codes -->
+    <div class="article-section" id="active">
+      <span class="eyebrow">Use These Now</span>
+      <h2>Active Coupon Codes</h2>
+      <p>These codes are currently valid at checkout. Click any code to copy it.</p>
+
+      <div onclick="copyCoupon('CLADD15', 'copy-CLADD15', '15% off any order')" class="coupon-demo">
+        <span class="coupon-code">CLADD15</span>
+        <span class="coupon-copy" id="copy-CLADD15">Click to copy &nbsp;·&nbsp; 15% off any order</span>
+      </div>
+
+      <div onclick="copyCoupon('WELCOME10', 'copy-WELCOME10', '10% off your first order')" class="coupon-demo">
+        <span class="coupon-code">WELCOME10</span>
+        <span class="coupon-copy" id="copy-WELCOME10">Click to copy &nbsp;·&nbsp; 10% off your first order</span>
+      </div>
+
+      <div class="article-box info" style="margin-top:20px;">
+        <p><strong>Codes are updated periodically.</strong> Subscribe to our newsletter to receive new codes first.</p>
+      </div>
+    </div>
+
+    <!-- How to Apply -->
+    <div class="article-section" id="how-to">
+      <span class="eyebrow">Step by Step</span>
+      <h2>How to Apply a Coupon Code</h2>
+      <ol>
+        <li>Add your chosen items to your cart</li>
+        <li>Go to your cart and click <strong>Proceed to Checkout</strong></li>
+        <li>Find the <strong>"Coupon or Gift Card"</strong> field in the order summary</li>
+        <li>Enter your code exactly as shown — codes are case-sensitive</li>
+        <li>Click <strong>Apply</strong> — the discount is reflected in your total instantly</li>
+        <li>Complete your order</li>
+      </ol>
+
+      <div class="article-box warning">
+        <p><strong>Codes are case-sensitive.</strong> Type or paste them exactly as shown — "cladd15" and "CLADD15" are not the same.</p>
+      </div>
+    </div>
+
+    <!-- Rules -->
+    <div class="article-section" id="rules">
+      <span class="eyebrow">The Fine Print</span>
+      <h2>Coupon Rules</h2>
+      <ul>
+        <li>Only one coupon code can be applied per order</li>
+        <li>Codes cannot be combined with other promotions unless explicitly stated</li>
+        <li>Welcome discount codes are valid for first-time purchases only — one per account</li>
+        <li>Codes cannot be applied retroactively to completed orders</li>
+        <li>Cladd reserves the right to expire or disable any coupon code at any time</li>
+        <li>Coupon discounts apply to the product subtotal only — not to shipping costs</li>
+        <li>If an order is refunded, the coupon value is not returned</li>
+      </ul>
+    </div>
+
+    <!-- FAQs -->
+    <div class="article-section" id="faqs">
+      <span class="eyebrow">Common Questions</span>
+      <h2>Discounts FAQs</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          My coupon code isn't working.
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Check that the code is entered exactly as shown — codes are case-sensitive. Also verify the code hasn't expired and your order meets any minimum spend requirement. Still not working? <a href="contact_page.html">Contact us.</a></p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I use a coupon and a gift card together?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Coupon codes and gift cards are treated separately. Apply your coupon first to reduce the subtotal, then apply your gift card to cover the remaining amount.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I find out about new promotions?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Subscribe to our newsletter at the bottom of any Cladd page. We send discount codes, early sale access, and new product announcements to subscribers first. Follow us on Instagram and Pinterest too.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          I forgot to apply my coupon before paying. Can I still get the discount?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Codes cannot be applied retroactively to completed orders. If your order was placed within the last 30 minutes and hasn't entered production, <a href="contact_page.html">contact us immediately</a> and we'll try to help.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="shop_haven.html">Power Bank Pouches</a></li>
+        <li><a href="shop_haven.html">Phone Pouches</a></li>
+        <li><a href="shop_haven.html">Stickers</a></li>
+        <li><a href="shop_haven.html">Tablet Pouches</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Sell</h3>
+      <ul>
+        <li><a href="landing_page.html">Become an Artist</a></li>
+        <li><a href="design_tips.html">Design Tips</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="about_page.html">Our Story</a></li>
+        <li><a href="affiliate_page.html">Refer &amp; Earn</a></li>
+        <li><a href="home_page.html">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="help_center_page.html">Help Center</a></li>
+        <li><a href="contact_page.html">Contact Us</a></li>
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">User Agreements</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Socials</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="subscribe_div">
+    <h2>Newsletter &amp; Special Offers</h2>
+    <form method="post">
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <div class="copyright">&copy; 2025 Cladd. All rights reserved. Built to protect.</div>
+</footer>
+
+<script>
+  function copyCoupon(code, labelId, description) {
+    navigator.clipboard.writeText(code).then(() => {
+      const label = document.getElementById(labelId);
+      label.textContent = 'Copied!';
+      label.classList.add('coupon-copied');
+      setTimeout(() => {
+        label.textContent = 'Click to copy · ' + description;
+        label.classList.remove('coupon-copied');
+      }, 2000);
+    });
+  }
+
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.classList.remove('open');
+      q.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+</script>
+
+</body>
+</html>

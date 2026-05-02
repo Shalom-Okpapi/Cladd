@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Return Center | Cladd</title>
+  <meta name="description" content="Start a return or exchange on a Cladd order. Check eligibility, submit your request, and track your resolution.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="img.png" type="image/x-icon">
+  <style>
+
+    .return-steps {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      margin: 32px 0;
+      flex-wrap: wrap;
+    }
+
+    .return-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      min-width: 80px;
+      position: relative;
+      text-align: center;
+    }
+
+    .return-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: 60%;
+      right: -40%;
+      height: 2px;
+      background: #e5e7eb;
+      z-index: 0;
+    }
+
+    .step-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 800;
+      border: 2px solid #e5e7eb;
+      background: white;
+      color: #6b7280;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 8px;
+    }
+
+    .return-step.active .step-circle {
+      border-color: #007acc;
+      color: #007acc;
+    }
+
+    .step-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: #6b7280;
+    }
+
+    .return-step.active .step-label { color: #07101b; }
+
+    .eligibility-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .eligibility-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid;
+    }
+
+    .eligibility-card.yes { background: #f0fdf4; border-color: #bbf7d0; }
+    .eligibility-card.no  { background: #fef2f2; border-color: #fecaca; }
+
+    .elig-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .yes .elig-icon { background: #22c55e; color: white; }
+    .no  .elig-icon { background: #ef4444; color: white; }
+
+    .elig-title {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #07101b;
+      margin-bottom: 2px !important;
+    }
+
+    .eligibility-card p:last-child {
+      font-size: 0.78rem;
+      color: #6b7280;
+      line-height: 1.6;
+      margin: 0 !important;
+    }
+
+    @media (max-width: 480px) {
+      .return-step:not(:last-child)::after { display: none; }
+      .return-steps { gap: 12px; }
+    }
+
+  </style>
+</head>
+<body>
+
+<header class="article-header">
+  <a href="home_page.html" class="brand-lockup">
+    <img src="img.png" alt="Cladd logo" class="brand-logo">
+    <h1>Cladd</h1>
+  </a>
+  <nav class="article-header-nav">
+    <a href="home_page.html">Home</a>
+    <a href="shop_haven.html">Shop</a>
+    <a href="help_center_page.html">Help Center</a>
+    <a href="contact_page.html">Contact</a>
+  </nav>
+  <div class="article-header-icons">
+    <a href="favorites_page.html" aria-label="Favorites"><i class="fa-regular fa-heart"></i></a>
+    <a href="shopping_cart_page.html" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+  </div>
+</header>
+
+<div class="article-hero">
+  <span class="eyebrow">After Your Purchase</span>
+  <h1>Return Center</h1>
+  <p>Start a return or exchange. Check eligibility, submit your request, and track your resolution.</p>
+</div>
+
+<nav class="breadcrumb">
+  <a href="home_page.html">Home</a>
+  <span class="sep">›</span>
+  <a href="help_center_page.html">Help Center</a>
+  <span class="sep">›</span>
+  <span class="current">Return Center</span>
+</nav>
+
+<div class="article-layout">
+
+  <aside class="article-sidebar">
+    <div class="sidebar-section">
+      <h3>On This Page</h3>
+      <ul>
+        <li><a href="#start" class="active">Start a Return</a></li>
+        <li><a href="#eligibility">What Qualifies</a></li>
+        <li><a href="#process">The Process</a></li>
+        <li><a href="#track">Track Your Return</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <h3>Related</h3>
+      <ul>
+        <li><a href="returns_and_exchanges.html">Full Returns Policy</a></li>
+        <li><a href="order_status_page.html">Order Status</a></li>
+        <li><a href="shipping_info_page.html">Shipping Info</a></li>
+        <li><a href="contact_page.html">Contact Support</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="article-content">
+
+    <!-- Start a Return -->
+    <div class="article-section" id="start">
+      <span class="eyebrow">Step by Step</span>
+      <h2>Start a Return</h2>
+      <p>Fill in the form below to begin your return or exchange. We review every request within 2 business days.</p>
+
+      <div class="return-steps">
+        <div class="return-step active">
+          <div class="step-circle">1</div>
+          <span class="step-label">Submit Request</span>
+        </div>
+        <div class="return-step">
+          <div class="step-circle">2</div>
+          <span class="step-label">We Review</span>
+        </div>
+        <div class="return-step">
+          <div class="step-circle">3</div>
+          <span class="step-label">Ship It Back</span>
+        </div>
+        <div class="return-step">
+          <div class="step-circle">4</div>
+          <span class="step-label">Resolved</span>
+        </div>
+      </div>
+
+      <form class="contact-form" id="return-form" onsubmit="submitReturn(event)" style="max-width:520px;">
+
+        <div class="form-group">
+          <label for="return-order">Order Number</label>
+          <input type="text" id="return-order" placeholder="e.g. CLX-00821" required>
+          <span class="hint">Found in your order confirmation email.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="return-email">Email Address</label>
+          <input type="email" id="return-email" placeholder="Email used at checkout" required>
+        </div>
+
+        <div class="form-group">
+          <label for="return-reason">Reason for Return</label>
+          <select id="return-reason" required>
+            <option value="">Select a reason</option>
+            <option>Item arrived defective</option>
+            <option>Wrong item received</option>
+            <option>Item damaged in transit</option>
+            <option>Item significantly not as described</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="return-resolution">Preferred Resolution</label>
+          <select id="return-resolution">
+            <option value="">Select preferred resolution</option>
+            <option>Full refund</option>
+            <option>Exchange for correct item</option>
+            <option>Replacement of same item</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="return-details">Describe the Issue</label>
+          <textarea id="return-details" placeholder="What did you receive vs what you expected? Be as specific as possible..." rows="4" required></textarea>
+        </div>
+
+        <div class="article-box info">
+          <p><strong>Have photos?</strong> After submitting, reply to our confirmation email with clear photos of the issue. This speeds up your resolution significantly.</p>
+        </div>
+
+        <br>
+        <button type="submit" class="submit-btn">Submit Return Request</button>
+
+      </form>
+
+      <div id="return-success" style="display:none; margin-top:24px;">
+        <div class="article-box success">
+          <p><strong>Return request submitted.</strong> We will review your case and respond by email within 2 business days. Keep your order confirmation and any photos ready.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Eligibility -->
+    <div class="article-section" id="eligibility">
+      <span class="eyebrow">Before You Submit</span>
+      <h2>What Qualifies for a Return</h2>
+      <p>Returns are accepted within <strong>30 days of delivery</strong> for the following reasons only.</p>
+
+      <div class="eligibility-grid">
+
+        <div class="eligibility-card yes">
+          <div class="elig-icon"><i class="fas fa-check"></i></div>
+          <div>
+            <p class="elig-title">Defective Product</p>
+            <p>Broken snap, peeling print, or any manufacturing defect on arrival.</p>
+          </div>
+        </div>
+
+        <div class="eligibility-card yes">
+          <div class="elig-icon"><i class="fas fa-check"></i></div>
+          <div>
+            <p class="elig-title">Wrong Item Received</p>
+            <p>You received a different design, size, or product than what you ordered.</p>
+          </div>
+        </div>
+
+        <div class="eligibility-card yes">
+          <div class="elig-icon"><i class="fas fa-check"></i></div>
+          <div>
+            <p class="elig-title">Damaged in Transit</p>
+            <p>Visible damage caused by shipping. Keep the original packaging for your case.</p>
+          </div>
+        </div>
+
+        <div class="eligibility-card yes">
+          <div class="elig-icon"><i class="fas fa-check"></i></div>
+          <div>
+            <p class="elig-title">Significantly Not as Described</p>
+            <p>The product received is materially different from what was shown on the product page.</p>
+          </div>
+        </div>
+
+        <div class="eligibility-card no">
+          <div class="elig-icon"><i class="fas fa-times"></i></div>
+          <div>
+            <p class="elig-title">Change of Mind</p>
+            <p>Every pouch is made to order. We cannot accept returns for change of mind.</p>
+          </div>
+        </div>
+
+        <div class="eligibility-card no">
+          <div class="elig-icon"><i class="fas fa-times"></i></div>
+          <div>
+            <p class="elig-title">Incorrect Size Selected</p>
+            <p>Please verify your power bank model before ordering. Size selection errors are not eligible.</p>
+          </div>
+        </div>
+
+        <div class="eligibility-card no">
+          <div class="elig-icon"><i class="fas fa-times"></i></div>
+          <div>
+            <p class="elig-title">Requests After 30 Days</p>
+            <p>Return requests made more than 30 days after delivery will not be accepted.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <p style="margin-top:16px;">For the full policy, visit our <a href="returns_and_exchanges.html">Returns &amp; Exchanges</a> page.</p>
+    </div>
+
+    <!-- The Process -->
+    <div class="article-section" id="process">
+      <span class="eyebrow">What Happens Next</span>
+      <h2>The Return Process</h2>
+
+      <h3>1. We Review Your Request</h3>
+      <p>Our team reviews every return request within <strong>2 business days.</strong> You will receive an email with our decision and next steps.</p>
+
+      <h3>2. Send Us Photos</h3>
+      <p>For defective, damaged, or incorrect items, reply to our confirmation email with clear photos. This is the fastest way to get your return approved.</p>
+
+      <h3>3. Ship It Back if Required</h3>
+      <p>If a physical return is required and your case is approved, we will send you a prepaid return label. You will never pay for return shipping on eligible items.</p>
+
+      <h3>4. Refund or Replacement</h3>
+      <p>Once received and inspected, your preferred resolution will be processed within <strong>3 to 7 business days.</strong></p>
+
+      <div class="article-box warning">
+        <p><strong>Do not send items back without contacting us first.</strong> Unauthorised returns may not be processed.</p>
+      </div>
+    </div>
+
+    <!-- Track Return -->
+    <div class="article-section" id="track">
+      <span class="eyebrow">Where Things Stand</span>
+      <h2>Track Your Return</h2>
+      <p>Already submitted a request? Check its status below.</p>
+
+      <form class="contact-form" id="track-form" onsubmit="trackReturn(event)" style="max-width:460px;">
+        <div class="form-group">
+          <label for="track-order">Order Number</label>
+          <input type="text" id="track-order" placeholder="e.g. CLX-00821" required>
+        </div>
+        <div class="form-group">
+          <label for="track-email">Email Address</label>
+          <input type="email" id="track-email" placeholder="Email used at checkout" required>
+        </div>
+        <button type="submit" class="submit-btn">Check Status</button>
+      </form>
+
+      <div id="track-result" style="display:none; margin-top:20px;">
+        <div class="article-box info">
+          <p><strong>Return Request Found.</strong> Your case is currently under review. We will contact you within 2 business days.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQs -->
+    <div class="article-section" id="faqs">
+      <span class="eyebrow">Common Questions</span>
+      <h2>Return FAQs</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How long does a refund take?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Once approved, refunds are processed within 3 to 7 business days. Your bank may take an additional 3 to 5 days to post the credit.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do I pay for return shipping?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>No. For all eligible returns, Cladd provides a prepaid return label. You will never be charged return shipping on qualifying items.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I exchange instead of getting a refund?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Select your preferred resolution when submitting your request. If you want an exchange for the correct item or a replacement, we will arrange that at no extra cost.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          My item arrived damaged. What should I do?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Take clear photos of the damage and the original packaging, then submit a return request above. Do not discard the packaging until your case is fully resolved.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          I have not heard back after submitting my return request.
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Check your spam folder first. If you still have not received a response within 3 business days, <a href="contact_page.html">contact us</a> with your order number and we will look into it immediately.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="shop_haven.html">Power Bank Pouches</a></li>
+        <li><a href="shop_haven.html">Phone Pouches</a></li>
+        <li><a href="shop_haven.html">Stickers</a></li>
+        <li><a href="shop_haven.html">Tablet Pouches</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Sell</h3>
+      <ul>
+        <li><a href="landing_page.html">Become an Artist</a></li>
+        <li><a href="design_tips.html">Design Tips</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="about_page.html">Our Story</a></li>
+        <li><a href="affiliate_page.html">Refer &amp; Earn</a></li>
+        <li><a href="home_page.html">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="help_center_page.html">Help Center</a></li>
+        <li><a href="contact_page.html">Contact Us</a></li>
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">User Agreements</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Socials</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="subscribe_div">
+    <h2>Newsletter &amp; Special Offers</h2>
+    <form method="post">
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <div class="copyright">&copy; 2025 Cladd. All rights reserved. Built to protect.</div>
+</footer>
+
+<script>
+
+  function submitReturn(e) {
+    e.preventDefault();
+    document.getElementById('return-form').style.display = 'none';
+    document.getElementById('return-success').style.display = 'block';
+  }
+
+  function trackReturn(e) {
+    e.preventDefault();
+    document.getElementById('track-result').style.display = 'block';
+  }
+
+  function toggleFaq(btn) {
+    var answer = btn.nextElementSibling;
+    var isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-question').forEach(function (q) {
+      q.classList.remove('open');
+      q.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+
+</script>
+
+</body>
+</html>

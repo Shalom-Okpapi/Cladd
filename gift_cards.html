@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gift Cards | Cladd</title>
+  <meta name="description" content="Give someone the freedom to carry what looks like them. Cladd gift cards — available in multiple amounts, delivered by email.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="img.png" type="image/x-icon">
+  <style>
+    .giftcard-amounts {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 28px 0;
+    }
+
+    .giftcard-tile {
+      flex: 1;
+      min-width: 100px;
+      border-radius: 14px;
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #e5e7eb;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .giftcard-tile:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+    }
+
+    .gc-amount {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #007acc, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+
+    .gc-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+
+    .gc-amount-white { -webkit-text-fill-color: white !important; }
+    .gc-label-white  { color: rgba(255,255,255,0.65) !important; }
+  </style>
+</head>
+<body>
+
+<header class="article-header">
+  <a href="home_page.html" class="brand-lockup">
+    <img src="img.png" alt="Cladd logo" class="brand-logo">
+    <h1>Cladd</h1>
+  </a>
+  <nav class="article-header-nav">
+    <a href="home_page.html">Home</a>
+    <a href="shop_haven.html">Shop</a>
+    <a href="help_center_page.html">Help Center</a>
+    <a href="contact_page.html">Contact</a>
+  </nav>
+  <div class="article-header-icons">
+    <a href="favorites_page.html" aria-label="Favorites"><i class="fa-regular fa-heart"></i></a>
+    <a href="shopping_cart_page.html" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+  </div>
+</header>
+
+<div class="article-hero">
+  <span class="eyebrow">The Perfect Gift</span>
+  <h1>Gift Cards</h1>
+  <p>Give someone the freedom to carry what looks like them. Cladd gift cards are delivered by email and never expire.</p>
+</div>
+
+<nav class="breadcrumb">
+  <a href="home_page.html">Home</a>
+  <span class="sep">›</span>
+  <a href="help_center_page.html">Help Center</a>
+  <span class="sep">›</span>
+  <span class="current">Gift Cards</span>
+</nav>
+
+<div class="article-layout">
+
+  <aside class="article-sidebar">
+    <div class="sidebar-section">
+      <h3>On This Page</h3>
+      <ul>
+        <li><a href="#buy" class="active">Buying a Gift Card</a></li>
+        <li><a href="#redeem">Redeeming a Gift Card</a></li>
+        <li><a href="#balance">Checking Balance</a></li>
+        <li><a href="#terms">Terms</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <h3>Related</h3>
+      <ul>
+        <li><a href="payment_options.html">Payment Options</a></li>
+        <li><a href="discounts_and_promotions.html">Discounts</a></li>
+        <li><a href="contact_page.html">Contact Support</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="article-content">
+
+    <!-- Buying -->
+    <div class="article-section" id="buy">
+      <span class="eyebrow">For the Giver</span>
+      <h2>Buying a Gift Card</h2>
+      <p>A Cladd gift card is the easiest way to give someone the freedom to choose exactly what represents them. No guessing their taste — let them pick it themselves.</p>
+
+      <div class="giftcard-amounts">
+        <div class="giftcard-tile" style="background: linear-gradient(135deg, #f0f7ff, #faf5ff);">
+          <span class="gc-amount">$10</span>
+          <span class="gc-label">Starter</span>
+        </div>
+        <div class="giftcard-tile" style="background: linear-gradient(135deg, #faf5ff, #f3e8ff);">
+          <span class="gc-amount">$25</span>
+          <span class="gc-label">Popular</span>
+        </div>
+        <div class="giftcard-tile" style="background: linear-gradient(135deg, #07101b, #0f1f35);">
+          <span class="gc-amount gc-amount-white">$50</span>
+          <span class="gc-label gc-label-white">Premium</span>
+        </div>
+        <div class="giftcard-tile" style="background: linear-gradient(135deg, #007acc, #a855f7);">
+          <span class="gc-amount gc-amount-white">$100</span>
+          <span class="gc-label gc-label-white">Ultimate</span>
+        </div>
+      </div>
+
+      <h3>How to Buy</h3>
+      <ol>
+        <li>Select your preferred gift card amount above</li>
+        <li>Enter the recipient's name and email address</li>
+        <li>Add a personal message (optional)</li>
+        <li>Choose a delivery date — send instantly or schedule it for a specific day</li>
+        <li>Complete your purchase — the gift card arrives in the recipient's inbox</li>
+      </ol>
+
+      <div class="article-box info">
+        <p><strong>Gift cards are delivered by email only.</strong> No physical card is sent. The email contains the unique code used at checkout.</p>
+      </div>
+    </div>
+
+    <!-- Redeeming -->
+    <div class="article-section" id="redeem">
+      <span class="eyebrow">For the Recipient</span>
+      <h2>Redeeming a Gift Card</h2>
+      <p>Got a Cladd gift card? Here's how to use it.</p>
+      <ol>
+        <li>Open your gift card email and copy the unique code</li>
+        <li>Shop the Cladd marketplace and add items to your cart</li>
+        <li>At checkout, enter your code in the <strong>"Coupon or Gift Card"</strong> field</li>
+        <li>The gift card value is deducted from your order total instantly</li>
+        <li>If your order exceeds the gift card value, pay the remainder with any accepted payment method</li>
+      </ol>
+
+      <div class="article-box success">
+        <p><strong>Gift cards never expire.</strong> Use it whenever you're ready — no pressure, no deadline.</p>
+      </div>
+    </div>
+
+    <!-- Balance -->
+    <div class="article-section" id="balance">
+      <span class="eyebrow">How Much Left?</span>
+      <h2>Checking Your Balance</h2>
+      <p>Log in to your Cladd account and go to <strong>Account Settings → Gift Cards</strong>. Your current balance is shown alongside your transaction history for that card.</p>
+      <p>You can also enter your code at checkout — the remaining balance will be shown before you confirm your order.</p>
+      <p>Need help finding your balance? <a href="contact_page.html">Contact us</a> with your gift card code and we'll look it up.</p>
+    </div>
+
+    <!-- Terms -->
+    <div class="article-section" id="terms">
+      <span class="eyebrow">Good to Know</span>
+      <h2>Gift Card Terms</h2>
+      <ul>
+        <li>Valid for purchases on Cladd only</li>
+        <li>Cannot be exchanged for cash</li>
+        <li>Never expire</li>
+        <li>Lost or stolen gift cards cannot be replaced — treat the code like cash</li>
+        <li>Cannot be used to purchase other gift cards</li>
+        <li>Partial redemption is supported — remaining balance is retained</li>
+        <li>Non-refundable once purchased</li>
+        <li>Cladd is not responsible for cards sent to an incorrect email address provided at purchase</li>
+      </ul>
+    </div>
+
+    <!-- FAQs -->
+    <div class="article-section" id="faqs">
+      <span class="eyebrow">Common Questions</span>
+      <h2>Gift Card FAQs</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I use more than one gift card on a single order?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Currently only one gift card code can be applied per order. If you have multiple gift cards, use them on separate orders.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          I didn't receive my gift card email.
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Check your spam folder first. If it's not there, <a href="contact_page.html">contact us</a> with the order number from your purchase confirmation and we'll resend it.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I get a refund on a gift card I bought?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Gift cards are non-refundable once purchased. If the recipient hasn't used it and there's a genuine issue, <a href="contact_page.html">contact us</a> and we'll review on a case-by-case basis.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What happens if my order total is less than the gift card value?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>The remaining balance stays on your gift card and can be used on a future order. Unused balances never expire.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I send a gift card to someone in another country?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Gift cards are delivered by email and can be sent to anyone, anywhere in the world. The recipient can use it to shop on Cladd regardless of their location.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="shop_haven.html">Power Bank Pouches</a></li>
+        <li><a href="shop_haven.html">Phone Pouches</a></li>
+        <li><a href="shop_haven.html">Stickers</a></li>
+        <li><a href="shop_haven.html">Tablet Pouches</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Sell</h3>
+      <ul>
+        <li><a href="landing_page.html">Become an Artist</a></li>
+        <li><a href="design_tips.html">Design Tips</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="about_page.html">Our Story</a></li>
+        <li><a href="affiliate_page.html">Refer &amp; Earn</a></li>
+        <li><a href="home_page.html">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="help_center_page.html">Help Center</a></li>
+        <li><a href="contact_page.html">Contact Us</a></li>
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">User Agreements</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Socials</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="subscribe_div">
+    <h2>Newsletter &amp; Special Offers</h2>
+    <form method="post">
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <div class="copyright">&copy; 2025 Cladd. All rights reserved. Built to protect.</div>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.classList.remove('open');
+      q.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+</script>
+
+</body>
+</html>

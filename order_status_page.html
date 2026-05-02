@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Status | Cladd</title>
+  <meta name="description" content="Track your Cladd order. Find out where your package is and when it will arrive.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="article.css">
+  <link rel="icon" href="img.png" type="image/x-icon">
+  <style>
+    .status-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .status-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 20px;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1.5px solid;
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+      min-width: 160px;
+      justify-content: center;
+    }
+
+    .status-card p {
+      font-size: 0.86rem;
+      color: #6b7280;
+      line-height: 1.7;
+      margin: 0;
+      padding-top: 4px;
+    }
+
+    .status-card p strong { color: #07101b; }
+    .status-card p a { color: #007acc; }
+
+    @media (max-width: 600px) {
+      .status-card { flex-direction: column; gap: 10px; }
+      .status-badge { min-width: unset; align-self: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="article-header">
+  <a href="home_page.html" class="brand-lockup">
+    <img src="img.png" alt="Cladd logo" class="brand-logo">
+    <h1>Cladd</h1>
+  </a>
+  <nav class="article-header-nav">
+    <a href="home_page.html">Home</a>
+    <a href="shop_haven.html">Shop</a>
+    <a href="help_center_page.html">Help Center</a>
+    <a href="contact_page.html">Contact</a>
+  </nav>
+  <div class="article-header-icons">
+    <a href="favorites_page.html" aria-label="Favorites"><i class="fa-regular fa-heart"></i></a>
+    <a href="shopping_cart_page.html" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+  </div>
+</header>
+
+<div class="article-hero">
+  <span class="eyebrow">Your Orders</span>
+  <h1>Order Status</h1>
+  <p>Find out where your package is and when it will arrive.</p>
+</div>
+
+<nav class="breadcrumb">
+  <a href="home_page.html">Home</a>
+  <span class="sep">›</span>
+  <a href="help_center_page.html">Help Center</a>
+  <span class="sep">›</span>
+  <span class="current">Order Status</span>
+</nav>
+
+<div class="article-layout">
+
+  <aside class="article-sidebar">
+    <div class="sidebar-section">
+      <h3>Order Help</h3>
+      <ul>
+        <li><a href="order_status_page.html" class="active">Order Status</a></li>
+        <li><a href="returns_and_exchanges.html">Returns &amp; Exchanges</a></li>
+        <li><a href="shipping_info_page.html">Shipping Info</a></li>
+        <li><a href="payment_options.html">Payment Options</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <h3>Need More Help?</h3>
+      <ul>
+        <li><a href="contact_page.html">Contact Support</a></li>
+        <li><a href="help_center_page.html">Help Center</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="article-content">
+
+    <!-- Order Lookup -->
+    <div class="article-section">
+      <span class="eyebrow">Track Your Package</span>
+      <h2>Look up your order.</h2>
+      <p>Enter your order number and the email address used at checkout to see your order status.</p>
+
+      <form class="contact-form" id="track-form" onsubmit="trackOrder(event)" style="max-width:480px;">
+        <div class="form-group">
+          <label for="order-num">Order Number</label>
+          <input type="text" id="order-num" placeholder="e.g. CLX-00821" required>
+          <span class="hint">Found in your order confirmation email.</span>
+        </div>
+        <div class="form-group">
+          <label for="order-email">Email Address</label>
+          <input type="email" id="order-email" placeholder="Email used at checkout" required>
+        </div>
+        <button type="submit" class="submit-btn">Track Order</button>
+      </form>
+
+      <!-- Result placeholder -->
+      <div id="track-result" style="display:none; margin-top:32px;">
+        <div class="article-box info">
+          <p><strong>Order CLX-00821</strong> — In Transit. Expected delivery: 3–5 business days. Check your email for your full tracking link.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Statuses Explained -->
+    <div class="article-section">
+      <span class="eyebrow">What does it mean?</span>
+      <h2>Understanding Your Order Status</h2>
+      <p>Each status below tells you exactly where your order is in the process.</p>
+
+      <div class="status-list">
+
+        <div class="status-card">
+          <div class="status-badge" style="background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe;">
+            <i class="fas fa-inbox"></i>
+            Order Received
+          </div>
+          <p>We've got your order and it's being reviewed. This usually takes a few minutes to a few hours.</p>
+        </div>
+
+        <div class="status-card">
+          <div class="status-badge" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">
+            <i class="fas fa-print"></i>
+            In Production
+          </div>
+          <p>Your design is being printed and the pouch is being assembled. Production typically takes <strong>2–5 business days</strong>.</p>
+        </div>
+
+        <div class="status-card">
+          <div class="status-badge" style="background:#f3e8ff; color:#6b21a8; border-color:#d8b4fe;">
+            <i class="fas fa-box"></i>
+            Shipped
+          </div>
+          <p>Your order is on its way. A tracking number will arrive in your email within 24 hours of shipment.</p>
+        </div>
+
+        <div class="status-card">
+          <div class="status-badge" style="background:#ecfdf5; color:#065f46; border-color:#6ee7b7;">
+            <i class="fas fa-truck"></i>
+            Out for Delivery
+          </div>
+          <p>Your package is with a local courier and will be delivered today. Stay close!</p>
+        </div>
+
+        <div class="status-card">
+          <div class="status-badge" style="background:#f0fdf4; color:#14532d; border-color:#bbf7d0;">
+            <i class="fas fa-check-circle"></i>
+            Delivered
+          </div>
+          <p>Your order has been delivered. If you can't locate it, check with neighbours or your building reception. <a href="contact_page.html">Contact us</a> within 7 days if it's missing.</p>
+        </div>
+
+        <div class="status-card">
+          <div class="status-badge" style="background:#fef2f2; color:#991b1b; border-color:#fecaca;">
+            <i class="fas fa-clock"></i>
+            Delayed
+          </div>
+          <p>Your order is taking longer than expected — usually due to customs, courier issues, or high demand. We'll notify you by email. You can also <a href="contact_page.html">contact us</a> for an update.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FAQs -->
+    <div class="article-section">
+      <span class="eyebrow">Common Questions</span>
+      <h2>Order FAQs</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          I never received my tracking number. What do I do?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Tracking numbers are sent by email within 24 hours of your order shipping. Check your spam or junk folder first. If it's still not there after 7 business days from your order date, <a href="contact_page.html">contact our support team</a>.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I change my delivery address after ordering?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Address changes can only be made while your order is still in the "Order Received" or "In Production" stage. Once shipped, the address cannot be changed. <a href="contact_page.html">Contact us immediately</a> if you need to update your address.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          My order says delivered but I haven't received it.
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Check with neighbours, your building reception, or any safe spots couriers commonly leave parcels. If you still can't locate it within 24 hours of the delivery notification, <a href="contact_page.html">contact us</a> and we'll investigate with the courier on your behalf.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I cancel my order?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Orders can be cancelled while in the "Order Received" stage only. Once production has started, cancellations are no longer possible as your item is already being made. <a href="contact_page.html">Contact us</a> as quickly as possible if you need to cancel.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="shop_haven.html">Power Bank Pouches</a></li>
+        <li><a href="shop_haven.html">Phone Pouches</a></li>
+        <li><a href="shop_haven.html">Stickers</a></li>
+        <li><a href="shop_haven.html">Tablet Pouches</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Sell</h3>
+      <ul>
+        <li><a href="landing_page.html">Become an Artist</a></li>
+        <li><a href="design_tips.html">Design Tips</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="about_page.html">Our Story</a></li>
+        <li><a href="affiliate_page.html">Refer &amp; Earn</a></li>
+        <li><a href="home_page.html">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="help_center_page.html">Help Center</a></li>
+        <li><a href="contact_page.html">Contact Us</a></li>
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">User Agreements</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Socials</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="subscribe_div">
+    <h2>Newsletter &amp; Special Offers</h2>
+    <form method="post">
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <div class="copyright">&copy; 2025 Cladd. All rights reserved. Built to protect.</div>
+</footer>
+
+<script>
+  function trackOrder(e) {
+    e.preventDefault();
+    document.getElementById('track-result').style.display = 'block';
+  }
+
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.classList.remove('open');
+      q.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,461 @@
+/*
+  ============================================================
+  CLADD — style.css
+  Shared stylesheet for index.html (signup) and login.html.
+  Poppins. Luxury spacing. Cladd branding.
+  FA 6.6.0 for X icon support.
+
+  NOTE: ALWAYS USE DESCENDING CLASS SELECTORS FOR CHILD
+  ELEMENTS TO AVOID AMBIGUITY.
+  ============================================================
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* ── Reset ───────────────────────────────────────────────── */
+
+* {
+  font-family: 'Poppins', sans-serif;
+  padding: 0; margin: 0;
+  border: none; outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style: none;
+  transition: all 0.3s ease;
+}
+
+:root {
+  --main-color:        #007acc;
+  --second-main-color: #00c6ff;
+  --accent-purple:     #a855f7;
+  --black:             #07101b;
+  --green:             #8bc34a;
+  --white:             #ffffff;
+  --off-white:         #f9fafb;
+  --border:            #e5e7eb;
+  --muted:             #6b7280;
+  --error-red:         #dc2626;
+  --card-radius:       12px;
+}
+
+html { scroll-behavior: smooth; }
+
+html::-webkit-scrollbar { width: 7px; }
+html::-webkit-scrollbar-track { background: transparent; }
+html::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 4px;
+}
+
+body {
+  color: var(--black);
+  background: var(--white);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ── Main Layout ─────────────────────────────────────────── */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 24px 60px;
+  gap: 40px;
+  min-height: calc(100vh - 300px);
+}
+
+
+/* ── Brand Wordmark ──────────────────────────────────────── */
+
+.brand-wordmark {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--main-color), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
+}
+
+
+/* ── Intro Section ───────────────────────────────────────── */
+
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 480px;
+}
+
+.intro-section h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--black);
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+/* Login page welcome */
+.intro-section h2.welcome {
+  font-size: 1.8rem;
+}
+
+.intro-section p {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 360px;
+}
+
+
+/* ── Option Section — Customer / Artist ──────────────────── */
+
+.opt-section {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 480px;
+  flex-wrap: wrap;
+}
+
+.opt-section .opt-section_div {
+  flex: 1;
+  min-width: 180px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--card-radius);
+  padding: 24px 16px;
+  cursor: pointer;
+  text-align: center;
+  background: var(--white);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.opt-section .opt-section_div:hover {
+  border-color: var(--accent-purple);
+  transform: translateY(-2px);
+}
+
+.opt-section .opt-section_div.active {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 4px rgba(0, 122, 204, 0.1);
+  background: linear-gradient(135deg, #f0f7ff 0%, #faf5ff 100%);
+}
+
+.opt-section .opt-img_container {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+}
+
+.opt-section .opt-img_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.opt-section .opt-section_div h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+
+.opt-section .opt-section_div p {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+
+/* ── Form Section ────────────────────────────────────────── */
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.form-section form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-section form input {
+  width: 100%;
+  border-bottom: 1.5px solid var(--border);
+  padding: 12px 4px;
+  font-size: 0.88rem;
+  color: var(--black);
+  background: transparent;
+  text-align: left;
+  transition: border-color 0.2s ease;
+}
+
+.form-section form input:focus {
+  border-bottom-color: var(--main-color);
+}
+
+.form-section form input::placeholder {
+  color: #bbb;
+  font-weight: 300;
+}
+
+/* Shop name field wrapper */
+#shop-name-field {
+  width: 100%;
+}
+
+/* Submit button */
+.form-section form button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: var(--black);
+  color: white;
+  border-radius: 999px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.form-section form button:hover {
+  background: var(--main-color);
+  transform: translateY(-1px);
+}
+
+/* Links below form */
+.form-section a {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+  display: block;
+}
+
+.form-section a:hover {
+  color: var(--main-color);
+}
+
+/* Forgot / create account links */
+.form-section #create_account,
+.form-section #forgot_password {
+  display: block;
+}
+
+
+/* ── Input Wrapper — Login icon positioning ──────────────── */
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bbb;
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bbb;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.toggle-password:hover {
+  color: var(--main-color);
+}
+
+
+/* ── Form Validation Error ───────────────────────────────── */
+
+.form-error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--error-red);
+  text-align: left;
+  width: 100%;
+  margin-top: -8px;
+}
+
+
+/* ── Legal Text ──────────────────────────────────────────── */
+
+.legal-text {
+  font-size: 0.74rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 340px;
+}
+
+.legal-link {
+  color: var(--accent-purple);
+  text-decoration: underline;
+}
+
+.legal-link:hover {
+  color: var(--main-color);
+}
+
+
+/* ── Footer ──────────────────────────────────────────────── */
+
+.footer {
+  background-color: var(--black);
+  color: #ddd;
+  padding: 64px 0 0;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px 52px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 36px;
+  border-bottom: 1px solid #1e2a38;
+}
+
+.footer-column { flex: 1; min-width: 150px; }
+
+.footer-column h3 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.footer-column li { margin-bottom: 12px; }
+
+.footer-column a {
+  color: #6b7280;
+  font-size: 13px;
+  transition: color 0.2s ease;
+}
+
+.footer-column a:hover { color: white; }
+
+/* Social icons — FA 6.6.0 */
+.social-links { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.social-links a {
+  color: #6b7280;
+  font-size: 1.2rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+  color: white;
+  transform: translateY(-3px);
+}
+
+.subscribe_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 44px 20px;
+}
+
+footer .subscribe_div h2 {
+  font-size: 0.8rem;
+  color: var(--second-main-color);
+  margin-bottom: 18px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+footer .subscribe_div form { display: flex; gap: 8px; }
+
+footer .subscribe_div form input {
+  border-radius: 20px;
+  padding: 9px 20px;
+  height: 40px;
+  font-size: 0.84rem;
+  color: var(--black);
+  min-width: 240px;
+  border-bottom: none;
+  text-align: left;
+}
+
+footer .subscribe_div form button {
+  border-radius: 20px;
+  padding: 9px 22px;
+  cursor: pointer;
+  background: white;
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+footer .subscribe_div form button:hover {
+  background: var(--second-main-color);
+}
+
+.copyright {
+  text-align: center;
+  padding: 22px;
+  font-size: 12px;
+  color: #374151;
+}
+
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+
+  main { padding: 60px 20px 40px; gap: 32px; }
+
+  .brand-wordmark { font-size: 1.5rem; }
+
+  .opt-section { flex-direction: column; }
+
+  .opt-section .opt-section_div { min-width: 100%; }
+
+  .footer-container { flex-direction: column; padding: 0 24px 44px; }
+  .footer-column    { min-width: 100%; }
+
+  footer .subscribe_div form               { flex-direction: column; align-items: center; }
+  footer .subscribe_div form input         { min-width: unset; width: 100%; }
+  footer .subscribe_div form button        { width: 100%; }
+}
