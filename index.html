@@ -28,7 +28,8 @@
 
     <div class="opt-section_div" id="opt-customer" onclick="selectType('customer')">
       <div class="opt-img_container">
-        <img src="cart.png" alt="Customer">
+          <i class="fa-solid fa-cart-shopping"></i>
+
       </div>
       <h3>I am here to shop</h3>
       <p>Find art that looks like me and carry it everywhere.</p>
@@ -36,7 +37,7 @@
 
     <div class="opt-section_div" id="opt-artist" onclick="selectType('artist')">
       <div class="opt-img_container">
-        <img src="art.png" alt="Artist">
+        <i class="fa-solid fa-pen-nib"></i>
       </div>
       <h3>I am here to create</h3>
       <p>Set up my shop and put my art in the real world.</p>
@@ -103,6 +104,85 @@
         <li><a href="home_page.html">Careers</a></li>
       </ul>
     </div>
+    <div class="footer-column">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="help_center_page.html">Help Center</a></li>
+        <li><a href="contact_page.html">Contact Us</a></li>
+        <li><a href="legal.html">Privacy Policy</a></li>
+        <li><a href="legal.html">User Agreements</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Socials</h3>
+      <ul class="social-links">
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="subscribe_div">
+    <h2>Newsletter &amp; Special Offers</h2>
+    <form method="post">
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <div class="copyright">
+    &copy; 2025 Cladd. All rights reserved. Built to protect.
+  </div>
+</footer>
+
+<script>
+  var selectedType = null;
+
+  function selectType(type) {
+    selectedType = type;
+
+    document.getElementById('opt-customer').classList.remove('active');
+    document.getElementById('opt-artist').classList.remove('active');
+    document.getElementById('opt-' + type).classList.add('active');
+
+    localStorage.setItem('cladd_account_type', type);
+
+    var shopField = document.getElementById('shop-name-field');
+    var shopInput = document.getElementById('shop-name');
+
+    if (type === 'artist') {
+      shopField.style.display = 'block';
+      shopInput.required = true;
+    } else {
+      shopField.style.display = 'none';
+      shopInput.required = false;
+      shopInput.value = '';
+    }
+  }
+
+  function validateForm() {
+    var password = document.getElementById('password').value;
+    var confirm  = document.getElementById('confirm-password').value;
+    var errorMsg = document.getElementById('password-error');
+
+    if (password !== confirm) {
+      errorMsg.style.display = 'flex';
+      return false;
+    }
+
+    errorMsg.style.display = 'none';
+
+    if (!selectedType) {
+      alert('Please select how you are joining - as a shopper or a creator.');
+      return false;
+    }
+
+    return true;
+  }
+</script>
+
+</body>
+</html>
     <div class="footer-column">
       <h3>Help</h3>
       <ul>
