@@ -3,201 +3,244 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How It Works | Pouchify</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>How It Works | Cladd</title>
+  <meta name="description" content="Set up your Cladd shop in three steps. Upload your designs, sell to the world, and get paid.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="how_it_works_page.css">
   <link rel="icon" href="img.png" type="image/x-icon">
 </head>
 <body>
 
 <header>
-  <!-- Hamburger Button -->
   <button id="hamburger" onclick="toggleSidebar()">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </button>
 
   <aside id="sidebar" class="closed">
     <ul>
-      <a href="#">
-        <li><div class="img_div"><img src="all.jpg"></div>Power Bank Pouches</li>
-      </a>
-      <a href="#">
-        <li><div class="img_div"><img src="t1.jpg"></div>Phone Pouches</li>
-      </a>
-      <a href="#">
-        <li><div class="img_div"><img src="ank.jpg"></div>Accessories</li>
-      </a>
-      <a href="#">
-        <li><div class="img_div"><img src="itel.jpg"></div>Coupons</li>
-      </a>
-      <a href="#">
-        <li><div class="img_div"><img src="haw.jpg"></div>Refer &amp; Earn</li>
-      </a>
+      <a href="#"><li><div class="img_div"><img src="all.jpg" alt="Power Bank Pouches"></div>Power Bank Pouches</li></a>
+      <a href="#"><li><div class="img_div"><img src="t1.jpg" alt="Phone Pouches"></div>Phone Pouches</li></a>
+      <a href="#"><li><div class="img_div"><img src="ank.jpg" alt="Accessories"></div>Accessories</li></a>
+      <a href="#"><li><div class="img_div"><img src="itel.jpg" alt="Coupons"></div>Coupons</li></a>
+      <a href="#"><li><div class="img_div"><img src="haw.jpg" alt="Refer & Earn"></div>Refer &amp; Earn</li></a>
     </ul>
-
     <div class="centers">
       <ul>
         <a href="return_center.html"><li>Return Center</li></a>
         <a href="help_center_page.html"><li>Help Center</li></a>
-        <!-- FIX 1: Was <li> Can't find my model</> — invalid closing tag -->
         <a href="device_help.html"><li>Can't find my model</li></a>
       </ul>
     </div>
-
     <div class="profile_link">
       <a href="how_it_works_page.html">
-        <div class="img_div"><img src="itel.jpg"></div>
-        <h1>Username/shopname</h1>
+        <div class="img_div"><img src="artist.jpg" alt="Profile"></div>
+        <h1>Username / Shop</h1>
       </a>
     </div>
   </aside>
 
   <div class="right">
     <div class="icon_links">
-      <a href="favorites_page.html"><img src="favorites.png" alt="favorites icon"></a>
-      <a href="shopping_cart_page.html"><img src="white_cart.png" alt="cart icon"></a>
+      <a href="favorites_page.html" aria-label="Favorites"><i class="fa-regular fa-heart"></i></a>
+      <a href="shopping_cart_page.html" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
     </div>
-    <!-- FIX 2: Removed logo image container — text wordmark only -->
-    <a href="home_page.html"><h1>Pouchify</h1></a>
+    <a href="home_page.html" class="brand-lockup">
+      <img src="img.png" alt="Cladd logo" class="brand-logo">
+      <h1>Cladd</h1>
+    </a>
   </div>
 
   <div class="search_form_container">
     <form method="post">
-      <input type="text" placeholder="Search products, themes,...">
+      <input type="text" placeholder="Search themes, products,...">
       <button type="submit"><i class="fas fa-search"></i></button>
     </form>
   </div>
 </header>
 
 
-<main>
-  <section class="first_section">
+<!-- Hero -->
+<section class="hiw-hero">
+  <p class="eyebrow">For independent artists</p>
+  <h1>Your art. The world's carry.</h1>
+  <p>Set up your Cladd shop in three steps. Upload your designs, sell to the world, and get paid. No inventory. No shipping. Just you and your art.</p>
+  <a href="index.html"><button class="hero-btn">Start Selling Free</button></a>
+</section>
 
-    <!-- Intro -->
-    <div class="intro-text">
-      <!-- FIX 3: "Welcome Shalom!" was hardcoded with a real name — every user
-           landing on this page would see your name, not theirs.
-           Changed to a generic welcome until real auth is implemented. -->
-      <h1>Welcome to Pouchify! 👋</h1>
-      <p>Follow these steps to set up your shop and start selling your art to the world.</p>
-      <!-- FIX 4: Both <a href=""> Add New Work links were empty — linked to shop upload page -->
-      <a href="home_page.html" class="cta-link">Add New Work</a>
-    </div>
 
-    <!-- Step 1: Create Products -->
-    <div class="container">
-      <div class="step-label">Step 1</div>
-      <h1>Create Products</h1>
+<!-- Step 1 -->
+<section class="step-section step-light">
+  <div class="step-badge">
+    <span class="step-num">01</span>
+    <span class="step-label">First</span>
+  </div>
+  <div class="step-content">
+    <p class="eyebrow">Create</p>
+    <h2>Build Your Products</h2>
+    <div class="step-blocks">
 
-      <h2><i class="fas fa-box-open"></i> Choose Your Product</h2>
-      <ul>
-        <li>Select a product from Pouchify's product listing.</li>
-        <li>Customise product colours, styles, and design placement.</li>
-      </ul>
-
-      <h2><i class="fas fa-cloud-upload-alt"></i> Upload Your Designs</h2>
-      <ul>
-        <li>Upload your original art to Pouchify.</li>
-        <!-- FIX 5: Typo "atleast" → "at least" (two words) -->
-        <li>Accepted file types: JPEG, PNG, SVG — minimum 300px, recommended 900px. You'll need at least 3 designs for your shop to go live.</li>
-      </ul>
-
-      <h2><i class="fas fa-tag"></i> Set Your Prices</h2>
-      <ul>
-        <li>Set your own prices for products (if eligible).</li>
-        <li>Understand base prices, royalty rates, and profit margins.</li>
-      </ul>
-    </div>
-
-    <!-- Step 2: Sell & Get Paid -->
-    <div class="container">
-      <div class="step-label">Step 2</div>
-      <h1>Sell Art &amp; Get Paid</h1>
-
-      <h2><i class="fas fa-store"></i> Sell Your Products</h2>
-      <ul>
-        <li>Pouchify produces and ships products directly to your customers.</li>
-        <li>Products are sold through Pouchify's website, social media, and other channels.</li>
-      </ul>
-
-      <h2><i class="fas fa-percentage"></i> Earn Royalties</h2>
-      <ul>
-        <li>Earn a percentage of the sale price for each product sold.</li>
-        <li>Royalty rates vary depending on product type and pricing tier.</li>
-      </ul>
-
-      <h2><i class="fas fa-wallet"></i> Get Paid</h2>
-      <ul>
-        <li>Payments are made via Bank Transfer, PayPal, Payoneer, or Grey.</li>
-        <li>Minimum payment threshold and payment schedules apply.</li>
-      </ul>
-    </div>
-
-    <!-- Step 3: Account Verification -->
-    <div class="container">
-      <div class="step-label">Step 3</div>
-      <h1>Your Account</h1>
-
-      <h2><i class="fas fa-user-check"></i> Verification</h2>
-      <ul>
-        <li>Your account will be verified once you've completed the steps above.</li>
-        <li>Verification can take up to 3–5 business days.</li>
-        <li>Your account will be classified as Basic or Premium after review — you'll receive a confirmation email once it's done.</li>
-      </ul>
-    </div>
-
-    <!-- Closing CTA -->
-    <div class="intro-text closing">
-      <h1>Now You're All Set! 😎</h1>
-      <p>Your shop is ready. Start uploading your best work and let the world discover your art.</p>
-      <!-- FIX 4: Was <a href=""> — empty href, now linked properly -->
-      <a href="home_page.html" class="cta-link">Add New Work</a>
-    </div>
-
-  </section>
-
-  <!-- Trust Bar -->
-  <section class="second_section">
-    <div class="container">
-      <div class="item">
-        <img src="world.png" alt="Worldwide Shipping">
-        <p>Worldwide Shipping</p>
+      <div class="step-block">
+        <div class="step-icon" style="background:#eff6ff; color:#1d4ed8;">
+          <i class="fas fa-grip-horizontal"></i>
+        </div>
+        <div>
+          <h3>Choose Your Product</h3>
+          <p>Browse Cladd's product range and select the canvas for your art — power bank pouches, phone pouches, stickers, and more.</p>
+        </div>
       </div>
-      <div class="item">
-        <img src="limt.png" alt="Limited Warranty">
-        <p>Limited Warranty</p>
-      </div>
-      <div class="item">
-        <img src="secured.png" alt="Secured Payments">
-        <p>Secured Payments</p>
-      </div>
-      <div class="item">
-        <img src="local.png" alt="Local Support">
-        <p>Local Support</p>
-      </div>
-    </div>
-  </section>
 
-</main>
+      <div class="step-block">
+        <div class="step-icon" style="background:#f3e8ff; color:#6b21a8;">
+          <i class="fas fa-upload"></i>
+        </div>
+        <div>
+          <h3>Upload Your Designs</h3>
+          <p>Upload your original artwork. Accepted: PNG, JPG, SVG at 300 DPI minimum. You need at least 3 designs for your shop to go live.</p>
+          <a href="design_tips.html" class="step-link">Read the Design Tips guide</a>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-icon" style="background:#ecfdf5; color:#065f46;">
+          <i class="fas fa-tag"></i>
+        </div>
+        <div>
+          <h3>Set Your Prices</h3>
+          <p>You control your selling price. Cladd deducts a platform fee — everything above it is your royalty. Price your work like the art it is.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Step 2 -->
+<section class="step-section step-gradient">
+  <div class="step-badge step-badge-light">
+    <span class="step-num">02</span>
+    <span class="step-label">Then</span>
+  </div>
+  <div class="step-content">
+    <p class="eyebrow">Sell</p>
+    <h2>Sell Art. Get Paid.</h2>
+    <div class="step-blocks">
+
+      <div class="step-block">
+        <div class="step-icon" style="background:#fff7ed; color:#c2410c;">
+          <i class="fas fa-store"></i>
+        </div>
+        <div>
+          <h3>We Handle Everything</h3>
+          <p>When a customer orders your design, Cladd produces, packages, and ships it directly to them. You do nothing except create.</p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-icon" style="background:#fef3c7; color:#92400e;">
+          <i class="fas fa-percent"></i>
+        </div>
+        <div>
+          <h3>Earn Royalties</h3>
+          <p>Every sale earns you a royalty. Track everything in your dashboard in real time.</p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-icon" style="background:#eff6ff; color:#1d4ed8;">
+          <i class="fas fa-wallet"></i>
+        </div>
+        <div>
+          <h3>Withdraw Anytime</h3>
+          <p>Earnings accumulate in your Cladd wallet. Withdraw via Bank Transfer, PayPal, Payoneer, or Grey once you hit the minimum threshold.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Step 3 -->
+<section class="step-section step-light">
+  <div class="step-badge">
+    <span class="step-num">03</span>
+    <span class="step-label">Finally</span>
+  </div>
+  <div class="step-content">
+    <p class="eyebrow">Verified</p>
+    <h2>Your Account Tier</h2>
+    <div class="step-blocks">
+
+      <div class="step-block">
+        <div class="step-icon" style="background:#f0fdf4; color:#14532d;">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div>
+          <h3>Verification</h3>
+          <p>After you complete setup, your account is reviewed. Verification takes <strong>3 to 5 business days.</strong> You will receive a confirmation email once done.</p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-icon" style="background:#f3e8ff; color:#6b21a8;">
+          <i class="fas fa-layer-group"></i>
+        </div>
+        <div>
+          <h3>Basic or Premium</h3>
+          <p>Your account is classified after review. Basic is free to start. Premium unlocks homepage placement, priority review, and dedicated support.</p>
+          <a href="landing_page.html" class="step-link">Compare tiers</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="step-cta">
+      <h3>Now you are all set.</h3>
+      <p>Start uploading your best work and let the world discover your art.</p>
+      <a href="index.html"><button class="cta-btn">Add New Work</button></a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Trust Bar -->
+<section class="trust-bar">
+  <div class="trust-grid">
+    <div class="trust-item">
+      <img src="world.png" alt="Worldwide Shipping">
+      <p>Worldwide Shipping</p>
+    </div>
+    <div class="trust-item">
+      <img src="limt.png" alt="Limited Warranty">
+      <p>Limited Warranty</p>
+    </div>
+    <div class="trust-item">
+      <img src="secured.png" alt="Secured Payments">
+      <p>Secured Payments</p>
+    </div>
+    <div class="trust-item">
+      <img src="local.png" alt="Local Support">
+      <p>Local Support</p>
+    </div>
+  </div>
+</section>
 
 
 <!-- Footer -->
 <footer class="footer">
   <div class="footer-container">
-
     <div class="footer-column">
       <h3>Shop</h3>
       <ul>
-        <!-- FIX 6: Removed spaces from all href attributes -->
         <li><a href="shop_haven.html">Power Bank Pouches</a></li>
         <li><a href="shop_haven.html">Stickers</a></li>
         <li><a href="shop_haven.html">Phone Pouches</a></li>
         <li><a href="shop_haven.html">Tablet Pouches</a></li>
       </ul>
     </div>
-
     <div class="footer-column">
       <h3>Sell</h3>
       <ul>
@@ -205,7 +248,6 @@
         <li><a href="design_tips.html">Design Tips</a></li>
       </ul>
     </div>
-
     <div class="footer-column">
       <h3>About</h3>
       <ul>
@@ -214,7 +256,6 @@
         <li><a href="home_page.html">Careers</a></li>
       </ul>
     </div>
-
     <div class="footer-column">
       <h3>Help</h3>
       <ul>
@@ -224,10 +265,8 @@
         <li><a href="legal.html">User Agreements</a></li>
       </ul>
     </div>
-
-    <!-- FIX 7: Replaced .jpg social icons with Font Awesome icons -->
     <div class="footer-column">
-      <h3 class="footer-title">Socials</h3>
+      <h3>Socials</h3>
       <ul class="social-links">
         <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
         <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
@@ -235,31 +274,33 @@
         <li><a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
       </ul>
     </div>
-
   </div>
-
   <div class="subscribe_div">
-    <h2>NEWSLETTER &amp; SPECIAL OFFERS</h2>
+    <h2>Newsletter &amp; Special Offers</h2>
     <form method="post">
-      <input type="email" placeholder="Enter email address">
-      <button>Subscribe</button>
+      <input type="email" placeholder="Enter your email address">
+      <button type="submit">Subscribe</button>
     </form>
   </div>
-
-  <div class="copyright">
-    &copy;Pouchify. All Rights Reserved
-  </div>
+  <div class="copyright">&copy; 2025 Cladd. All rights reserved. Built to protect.</div>
 </footer>
 
-
-<!-- FIX 8: Moved <script> inside </body> -->
 <script>
   function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    const hamburger = document.getElementById('hamburger');
-    sidebar.classList.toggle('active');
-    hamburger.classList.toggle('close');
+    document.getElementById('sidebar').classList.toggle('active');
+    document.getElementById('hamburger').classList.toggle('close');
   }
+
+  document.addEventListener('click', function (e) {
+    var sidebar   = document.getElementById('sidebar');
+    var hamburger = document.getElementById('hamburger');
+    if (sidebar.classList.contains('active') &&
+        !sidebar.contains(e.target) &&
+        !hamburger.contains(e.target)) {
+      sidebar.classList.remove('active');
+      hamburger.classList.remove('close');
+    }
+  });
 </script>
 
 </body>
